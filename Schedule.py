@@ -1,7 +1,4 @@
 #coding=utf8
-import sys
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 from DetailLinkDao import DetailLinkDao
 from KeywordDao import KeywordDao
 from DirDetailLinkDao import DirDetailLinkDao
