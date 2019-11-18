@@ -1,6 +1,4 @@
-import sys
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
 from DetailLinkDao import DetailLinkDao
 from KeywordDao import KeywordDao
 from DirDetailLinkDao import DirDetailLinkDao
@@ -31,9 +29,9 @@ if __name__ == '__main__':
 
         dirDetailLinkDao = DirDetailLinkDao()
         if dirDetailLinkDao.isLowLevelDetailLinksForRedis():
-            print('redis中的seed_dir_detail_link low put mysql data to redis..')
+            print('redis seed_dir_detail_link low put mysql data to redis..')
             dirDetailLinkDao.putDetailLinksToRedis()
         else:
-            print('redis中的seed_dir_detail_link normal')
+            print('redis seed_dir_detail_link normal')
 
         time.sleep(5)

@@ -1,6 +1,4 @@
-import sys
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
 import pymysql
 import redis
 class KeywordDao:
@@ -37,7 +35,7 @@ class KeywordDao:
     # 判断redis上的关键词是不是低于limit个
     def isLowLevelKeywordForRids(self):
         seedKeywordLen = self.myRedis.scard(self.seedKeyword)
-        print('关键词个数为：' + str(seedKeywordLen))
+        print('keyword len' + str(seedKeywordLen))
         if seedKeywordLen < self.limit:
             return True
         else:

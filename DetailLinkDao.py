@@ -1,6 +1,4 @@
-import sys
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
 import pymysql
 import redis
 from KeywordDao import KeywordDao
@@ -64,7 +62,7 @@ class DetailLinkDao:
 
     def isLowLevelDetailLinksForRedis(self):
         seedDetailLinkLen = self.myRedis.scard(self.seedDetailLink)
-        print('详细页连接数：' + str(seedDetailLinkLen))
+        print('detail page link len' + str(seedDetailLinkLen))
         if seedDetailLinkLen < self.limit:
             return True
         else:

@@ -1,6 +1,4 @@
-import sys
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
 import pymysql
 import redis
 
@@ -37,7 +35,7 @@ class DirDetailLinkDao:
 
     def isLowLevelDetailLinksForRedis(self):
         seedDetailLinkLen = self.myRedis.scard(self.seedDirDetailLink)
-        print('详细页连接数：' + str(seedDetailLinkLen))
+        print('detail link len：' + str(seedDetailLinkLen))
         if seedDetailLinkLen < self.limit:
             return True
         else:
