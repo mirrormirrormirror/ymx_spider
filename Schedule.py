@@ -31,9 +31,9 @@ if __name__ == '__main__':
 
         dirDetailLinkDao = DirDetailLinkDao()
         if dirDetailLinkDao.isLowLevelDetailLinksForRedis():
-            print(u'redis中的seed_dir_detail_link low put mysql data to redis..')
+            print('redis中的seed_dir_detail_link low put mysql data to redis..')
             dirDetailLinkDao.putDetailLinksToRedis()
         else:
-            print(u'redis中的seed_dir_detail_link normal')
+            print('redis中的seed_dir_detail_link normal')
 
         time.sleep(5)

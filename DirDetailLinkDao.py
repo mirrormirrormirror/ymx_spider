@@ -37,7 +37,7 @@ class DirDetailLinkDao:
 
     def isLowLevelDetailLinksForRedis(self):
         seedDetailLinkLen = self.myRedis.scard(self.seedDirDetailLink)
-        print(u'详细页连接数：' + str(seedDetailLinkLen))
+        print('详细页连接数：' + str(seedDetailLinkLen))
         if seedDetailLinkLen < self.limit:
             return True
         else:

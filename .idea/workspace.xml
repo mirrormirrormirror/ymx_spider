@@ -4,16 +4,9 @@
     <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Detail.py" afterPath="$PROJECT_DIR$/Detail.py" />
-      <change beforePath="$PROJECT_DIR$/DetailDao.py" afterPath="$PROJECT_DIR$/DetailDao.py" />
-      <change beforePath="$PROJECT_DIR$/DetailLinkDao.py" afterPath="$PROJECT_DIR$/DetailLinkDao.py" />
       <change beforePath="$PROJECT_DIR$/DirDetailLinkDao.py" afterPath="$PROJECT_DIR$/DirDetailLinkDao.py" />
-      <change beforePath="$PROJECT_DIR$/Download.py" afterPath="$PROJECT_DIR$/Download.py" />
-      <change beforePath="$PROJECT_DIR$/KeywordDao.py" afterPath="$PROJECT_DIR$/KeywordDao.py" />
       <change beforePath="$PROJECT_DIR$/Schedule.py" afterPath="$PROJECT_DIR$/Schedule.py" />
-      <change beforePath="$PROJECT_DIR$/Search.py" afterPath="$PROJECT_DIR$/Search.py" />
       <change beforePath="$PROJECT_DIR$/SearchGoogle.py" afterPath="$PROJECT_DIR$/SearchGoogle.py" />
-      <change beforePath="$PROJECT_DIR$/chrome.py" afterPath="$PROJECT_DIR$/chrome.py" />
-      <change beforePath="$PROJECT_DIR$/inputKeyword.py" afterPath="$PROJECT_DIR$/inputKeyword.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,7 +45,31 @@
         <entry file="file://$PROJECT_DIR$/Schedule.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+              <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Detail.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="256" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -63,8 +80,8 @@
       <file leaf-file-name="DetailDao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DetailDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+            <state relative-caret-position="135">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <marker date="1574086932932" expanded="true" signature="526:698" ph="INSERT INTO `t_ymx_detail`... " />
@@ -77,8 +94,8 @@
       <file leaf-file-name="DetailLinkDao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+            <state relative-caret-position="117">
+              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <marker date="1574086932905" expanded="true" signature="718:770" ph="select keywo... t_ymx_detail_link" />
@@ -93,27 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DirDetailLinkDao.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DirDetailLinkDao.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <marker date="1574086932924" expanded="true" signature="720:794" ph="INSERT INTO `t_ymx_dir_detail_link`... " />
-                <marker date="1574086932924" expanded="true" signature="1251:1338" ph="select id,de... t_ymx_dir_detail_link" />
-                <marker date="1574086932924" expanded="true" signature="1891:1949" ph="select keywo... t_ymx_detail_link" />
-                <marker date="1574086932924" expanded="true" signature="2501:2562" ph="update t_ymx_dir_detail_link... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Download.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Download.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+            <state relative-caret-position="117">
+              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -133,34 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Search.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="KeywordDao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KeywordDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="9">
               <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -186,6 +163,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DirDetailLinkDao.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DirDetailLinkDao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1574087116420" expanded="true" signature="720:794" ph="INSERT INTO `t_ymx_dir_detail_link`... " />
+                <marker date="1574087116420" expanded="true" signature="1251:1338" ph="select id,de... t_ymx_dir_detail_link" />
+                <marker date="1574087116420" expanded="true" signature="1890:1948" ph="select keywo... t_ymx_detail_link" />
+                <marker date="1574087116420" expanded="true" signature="2500:2561" ph="update t_ymx_dir_detail_link... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -197,7 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Enter the characters you</find>
       <find>Enter the characters you s</find>
       <find>Enter the characters you see bel</find>
       <find>www.amazon.com</find>
@@ -227,6 +219,7 @@
       <find>dow</find>
       <find>brand</find>
       <find>star</find>
+      <find>u'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,15 +246,15 @@
         <option value="$PROJECT_DIR$/test7.py" />
         <option value="$PROJECT_DIR$/text8.py" />
         <option value="$PROJECT_DIR$/chrome.py" />
-        <option value="$PROJECT_DIR$/Detail.py" />
         <option value="$PROJECT_DIR$/DetailDao.py" />
         <option value="$PROJECT_DIR$/DetailLinkDao.py" />
-        <option value="$PROJECT_DIR$/DirDetailLinkDao.py" />
         <option value="$PROJECT_DIR$/Download.py" />
         <option value="$PROJECT_DIR$/inputKeyword.py" />
         <option value="$PROJECT_DIR$/KeywordDao.py" />
-        <option value="$PROJECT_DIR$/Schedule.py" />
         <option value="$PROJECT_DIR$/Search.py" />
+        <option value="$PROJECT_DIR$/Schedule.py" />
+        <option value="$PROJECT_DIR$/Detail.py" />
+        <option value="$PROJECT_DIR$/DirDetailLinkDao.py" />
         <option value="$PROJECT_DIR$/SearchGoogle.py" />
       </list>
     </option>
@@ -518,11 +511,19 @@
       <option name="project" value="LOCAL" />
       <updated>1574086705502</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="UNICODE">
+      <created>1574086936599</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574086936600</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -530,7 +531,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32235295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21111111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21111111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -790,10 +791,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chrome.py">
+    <entry file="file://$PROJECT_DIR$/Search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chrome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="12" column="51" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="51" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -802,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="159">
+          <caret line="256" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -812,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DetailDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="135">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1574086932932" expanded="true" signature="526:698" ph="INSERT INTO `t_ymx_detail`... " />
@@ -824,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="117">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1574086932905" expanded="true" signature="718:770" ph="select keywo... t_ymx_detail_link" />
@@ -841,22 +852,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DirDetailLinkDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="167">
+          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1574086932924" expanded="true" signature="720:794" ph="INSERT INTO `t_ymx_dir_detail_link`... " />
-            <marker date="1574086932924" expanded="true" signature="1251:1338" ph="select id,de... t_ymx_dir_detail_link" />
-            <marker date="1574086932924" expanded="true" signature="1891:1949" ph="select keywo... t_ymx_detail_link" />
-            <marker date="1574086932924" expanded="true" signature="2501:2562" ph="update t_ymx_dir_detail_link... " />
+            <marker date="1574087116420" expanded="true" signature="720:794" ph="INSERT INTO `t_ymx_dir_detail_link`... " />
+            <marker date="1574087116420" expanded="true" signature="1251:1338" ph="select id,de... t_ymx_dir_detail_link" />
+            <marker date="1574087116420" expanded="true" signature="1890:1948" ph="select keywo... t_ymx_detail_link" />
+            <marker date="1574087116420" expanded="true" signature="2500:2561" ph="update t_ymx_dir_detail_link... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="117">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -875,7 +886,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KeywordDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="9">
           <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -901,17 +912,7 @@
     <entry file="file://$PROJECT_DIR$/Schedule.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -920,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        <state relative-caret-position="167">
+          <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

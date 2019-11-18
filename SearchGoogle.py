@@ -36,7 +36,7 @@ class SearchGoogle:
         if response.status_code == 200:
             return response.text
         else:
-            print(u'返回状态码异常：'+str(response.status_code))
+            print('返回状态码异常：'+str(response.status_code))
             return None
 
     def getPageLink(self, keyword, pageNum):
@@ -83,7 +83,7 @@ if __name__ == '__main__':
         try:
             id2keyword = keyWordDao.popKeyWordForRedis()
             if id2keyword is None:
-                print(u'关键词没了，睡眠3秒')
+                print('关键词没了，睡眠3秒')
                 continue
             else:
                 id2keywordDic = eval(id2keyword)
