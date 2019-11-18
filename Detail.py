@@ -22,16 +22,16 @@ class Detail:
         reviewsPattern = 'a-size-base">\d+ ratings'
         reviewsStr = re.search(reviewsPattern, text)
         if reviewsStr is None:
-            print('页面结构有问题，暂时跳过')
+            print('page abnormal skip')
         else:
             reviews = re.search(r'\d+', reviewsStr.group())
             return reviews.group()
 
     def parseReviewsCN(self, text):
-        reviewsPattern = 'a-size-base">\d+ 星级<'
+        reviewsPattern = u'a-size-base">\d+ 星级<'
         reviewsStr = re.search(reviewsPattern, text)
         if reviewsStr is None:
-            print('页面结构有问题，暂时跳过')
+            print('page abnormal ski')
         else:
             reviews = re.search(r'\d+', reviewsStr.group())
             return reviews.group()
@@ -57,7 +57,7 @@ class Detail:
         text = str(startSoup.select('#acrPopover'))
         startsPattern = 'a-icon-alt">(.*?)</span></i>'
         startsStr = re.search(startsPattern, text).group()
-        startsBefore = startsStr.split('a-icon-alt">')[1].split('颗星，最多')[0].strip()
+        startsBefore = startsStr.split('a-icon-alt">')[1].split(u'颗星，最多')[0].strip()
         starts = startsBefore
         return starts
 
@@ -105,7 +105,7 @@ class Detail:
         page = self.chrome.download(url)
 
         if self.isDirPage(page):
-            print('是目录页，需要爬取详细页的信息')
+            print(u'是目录页，需要爬取详细页的信息')
             detailLinkDao = DetailLinkDao()
             dirDetailLinkDao = DirDetailLinkDao()
             keywordId2link = []
@@ -119,9 +119,9 @@ class Detail:
             dirDetailLinkDao.batchInsert(keywordId2link)
             detailLinkDao.close()
             dirDetailLinkDao.close()
-        elif '很抱歉。您输入的网址不是我们网站上的有效网页' in page:
+        elif u'很抱歉。您输入的网址不是我们网站上的有效网页' in page:
             detailLinkDao = DetailLinkDao()
-            print('不是亚马逊的网址跳过')
+            print(u'不是亚马逊的网址跳过')
             detailLinkDao.updateJobStateById(-1, detailLinkId)
             detailLinkDao.close()
             return None
@@ -129,26 +129,26 @@ class Detail:
         else:
             detailLinkDao = DetailLinkDao()
             if 'www.amazon.com' not in page:
-                print('不是亚马逊的网址跳过')
+                print(u'不是亚马逊的网址跳过')
                 detailLinkDao.updateJobStateById(-1, detailLinkId)
                 return None
             elif self.isIntercept(page):
-                print('要输入验证码，暂时跳过')
+                print(u'要输入验证码，暂时跳过')
                 detailLinkDao.updateJobStateById(3, detailLinkId)
                 time.sleep(10)
                 return None
 
-            if '星级' in page:
+            if u'星级' in page:
                 reviews = self.parseReviewsCN(page)
             else:
                 reviews = self.parseReviews(page)
             if reviews is None:
-                print('页面结构有问题，暂时跳过')
+                print(u'页面结构有问题，暂时跳过')
                 detailLinkDao.updateJobStateById(3, detailLinkId)
                 return None
             detailLinkDao.close()
             asin = self.parseAsin(page)
-            if '星级' in page:
+            if u'星级' in page:
                 stars = self.parseStarsCN(page)
             else:
                 stars = self.parseStars(page)
@@ -242,7 +242,7 @@ class Detail:
             if id2detailLink is None:
                 id2detailLink = detailLinkDao.popId2detailLinkForRedis()
             if id2detailLink is None:
-                print('没有连接了停止3秒')
+                print(u'没有连接了停止3秒')
                 time.sleep(3)
                 continue
 
@@ -255,7 +255,7 @@ class Detail:
                 continue
             detailData = self.crawl(detailLink, detailLinkId)
             if detailData is None:
-                print('爬取失败：' + id2detailLink)
+                print(u'爬取失败：' + id2detailLink)
                 continue
 
             detailDao = DetailDao()
