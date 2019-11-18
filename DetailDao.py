@@ -4,7 +4,8 @@ import pymysql
 
 class DetailDao:
     def __init__(self):
-        self.db = pymysql.connect('cdb-8z1kodpo.bj.tencentcdb.com', 'root', 'mirror123', 'ymx')
+        self.db = pymysql.connect(host='cdb-8z1kodpo.bj.tencentcdb.com', port=10050, user='root', password='mirror123',
+                                  database='ymx')
         self.cursor = self.db.cursor()
 
     def insert(self, asin, stars, reviews, last_review_time, title, brand, keyword, keyword_id, detail_link,

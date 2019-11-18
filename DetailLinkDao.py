@@ -7,7 +7,8 @@ from DirDetailLinkDao import  DirDetailLinkDao
 class DetailLinkDao:
 
     def __init__(self):
-        self.db = pymysql.connect('cdb-8z1kodpo.bj.tencentcdb.com', 'root', 'mirror123', 'ymx')
+        self.db = pymysql.connect(host='cdb-8z1kodpo.bj.tencentcdb.com', port=10050, user='root', password='mirror123',
+                                  database='ymx')
         self.cursor = self.db.cursor()
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
