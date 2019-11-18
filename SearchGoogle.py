@@ -1,3 +1,7 @@
+#coding=utf8
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -33,6 +37,7 @@ class SearchGoogle:
         if response.status_code == 200:
             return response.text
         else:
+            print('返回状态码异常：'+str(response.status_code))
             return None
 
     def getPageLink(self, keyword, pageNum):
@@ -44,15 +49,15 @@ class SearchGoogle:
         else:
             return False
 
-    def run(self, keyword2KeywordId):
-        keyword = keyword2KeywordId[0]
-        keywordId = keyword2KeywordId[1]
+    def run(self, keywordId2Keyword):
+        keyword = keywordId2Keyword[1]
+        keywordId = keywordId2Keyword[0]
         # 获取第一页
         url = self.getDownloadLink(keyword, 0)
         text = self.download(url)
         pageLinks = self.parsePageLink(text)
         keyword2link = self.getKeyword2link(keywordId, pageLinks)
-        self.keywordDao.updateKeywordState(keyword2link, 2)
+        self.keywordDao.updateKeywordState(keywordId, 2)
         self.detailLinkDao.batchInsert(keyword2link)
         isLastPage = self.isLastPage(text)
         pageNum = 1
@@ -72,7 +77,23 @@ class SearchGoogle:
 
 
 if __name__ == '__main__':
-    page = 'rpCHfe">www.amazon.ca &https://www.amazon.ca/UrbanEars-Zinken-Headphones-Dark-Grey/dp/B007U28TN6"bDiCFzBXKLSbeyiqLv/ELS/snmZ7A/7kn'
-    pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
-    result = re.findall(pattern, page)
-    print(result)
+
+    while True:
+        detailLinkDao = DetailLinkDao()
+        keyWordDao = KeywordDao()
+        try:
+            id2keyword = keyWordDao.popKeyWordForRedis()
+            if id2keyword is None:
+                print('关键词没了，睡眠3秒')
+                continue
+            else:
+                id2keywordDic = eval(id2keyword)
+                keyWord = id2keywordDic[1]
+                keywordId = id2keywordDic[0]
+                googleSearch = SearchGoogle()
+                googleSearch.run(id2keywordDic)
+            keyWordDao.close()
+            detailLinkDao.close()
+        except:
+            keyWordDao.close()
+            detailLinkDao.close()

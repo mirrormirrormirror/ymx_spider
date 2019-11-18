@@ -1,4 +1,7 @@
-
+#coding=utf8
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 from selenium import webdriver
 
 

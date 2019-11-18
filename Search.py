@@ -1,3 +1,7 @@
+#coding=utf8
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver

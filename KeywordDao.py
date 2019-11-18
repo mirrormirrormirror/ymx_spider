@@ -1,3 +1,7 @@
+#coding=utf8
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import pymysql
 import redis
 
@@ -5,7 +9,7 @@ import redis
 class KeywordDao:
 
     def __init__(self):
-        self.db = pymysql.connect('localhost', 'root', 'aa123', 'ymx')
+        self.db = pymysql.connect('cdb-8z1kodpo.bj.tencentcdb.com', 'root', 'mirror123', 'ymx')
         self.cursor = self.db.cursor()
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
