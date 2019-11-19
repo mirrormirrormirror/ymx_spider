@@ -141,7 +141,9 @@ class Detail:
             row = {'asin': asin, 'stars': stars, 'brand': brand, 'lastReviewTime': lastReviewTimeFormat,
                    'isVariant': isVariant,
                    'reviews': reviews, 'title': title}
-            print(row)
+            rowOther = row
+            rowOther['title'] = 'title'
+            print(rowOther)
             return row
 
     def formatTime(self, dateStr):
