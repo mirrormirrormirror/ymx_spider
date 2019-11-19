@@ -33,7 +33,7 @@ class Chrome:
                 self.driver.get(url)
                 page = self.driver.page_source
         except:
-            page = 'Enter the characters you see below'
+            page = 'aaaa'
         return page
 
     def close(self):
