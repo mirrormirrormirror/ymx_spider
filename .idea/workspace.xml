@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/chrome.py" afterPath="$PROJECT_DIR$/chrome.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,19 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chrome.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chrome.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailLinkDao.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DetailLinkDao.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="268">
@@ -647,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574135703148</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="utf-8">
+      <created>1574135960847</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1574135960847</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -996,23 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1574131537939" expanded="true" signature="566:618" ph="select keywo... t_ymx_detail_link" />
-            <marker date="1574131537939" expanded="true" signature="566:620" ph="select keywo... t_ymx_detail_link" />
-            <marker date="1574131537939" expanded="true" signature="1430:1500" ph="insert into test... " />
-            <marker date="1574131537939" expanded="true" signature="1964:2021" ph="update t_ymx_detail_link... " />
-            <marker date="1574131537939" expanded="true" signature="2872:2955" ph="select id,de... t_ymx_detail_link" />
-            <marker date="1574131537939" expanded="true" signature="3328:3381" ph="update detail_link... " />
-            <marker date="1574131537939" expanded="true" signature="3328:3383" ph="update detail_link... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/keyword/keywor20190008.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1044,10 +1021,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chrome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state relative-caret-position="399">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1574131537939" expanded="true" signature="566:618" ph="select keywo... t_ymx_detail_link" />
+            <marker date="1574131537939" expanded="true" signature="566:620" ph="select keywo... t_ymx_detail_link" />
+            <marker date="1574131537939" expanded="true" signature="1430:1500" ph="insert into test... " />
+            <marker date="1574131537939" expanded="true" signature="1964:2021" ph="update t_ymx_detail_link... " />
+            <marker date="1574131537939" expanded="true" signature="2872:2955" ph="select id,de... t_ymx_detail_link" />
+            <marker date="1574131537939" expanded="true" signature="3328:3381" ph="update detail_link... " />
+            <marker date="1574131537939" expanded="true" signature="3328:3383" ph="update detail_link... " />
           </folding>
         </state>
       </provider>
