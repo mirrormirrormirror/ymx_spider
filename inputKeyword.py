@@ -1,4 +1,3 @@
-
 from KeywordDao import KeywordDao
 
 if __name__ == '__main__':
@@ -8,7 +7,7 @@ if __name__ == '__main__':
     keywords = f.readlines()
 
     for keyword in keywords:
-        keyword = keyword.replace('\n','')
+        keyword = keyword.replace('\n', '')
         print(keyword)
-        keywordDao.insert(keyword,0)
+        keywordDao.insert(keyword, 0)
     keywordDao.close()

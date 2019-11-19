@@ -1,20 +1,26 @@
 import requests
-from bs4 import BeautifulSoup
-from selenium import webdriver
 import re
 from KeywordDao import KeywordDao
 from DetailLinkDao import DetailLinkDao
+import pymysql
 from chrome import Chrome
+import redis
+import time
 
 
 class SearchGoogle:
 
     def __init__(self):
-        self.baseSearchUrl = 'https://www.google.com/search?q=site:amazon.ca %s currently unavailable&start=%s'
+        self.iniHostToRedis()
+        self.baseSearchUrl = '%s/search?q=site:amazon.ca %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
-        self.chrome = Chrome()
-        self.chrome.driver.get('https://www.google.com')
+        # self.chrome = Chrome()
+        # self.chrome.driver.get('https://www.google.com')
+
+        self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
+        self.googleHost = 'google_host'
+        self.iniHostToRedis()
 
     def getKeyword2link(self, keywordId, allLinks):
         keywordId2link = list()
@@ -24,7 +30,8 @@ class SearchGoogle:
         return keywordId2link
 
     def getDownloadLink(self, keyword, pageNum):
-        return self.baseSearchUrl % (keyword, pageNum * 10)
+        host = self.myRedis.srandmember(self.googleHost)
+        return self.baseSearchUrl % (host,keyword, pageNum * 10)
 
     def parsePageLink(self, text):
         pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
@@ -32,12 +39,17 @@ class SearchGoogle:
         return pageLinks
 
     def download(self, url):
-        text = self.chrome.download(url)
-
+        text = requests.get(url).text
         return text
 
-    def getPageLink(self, keyword, pageNum):
-        pass
+    def iniHostToRedis(self):
+        db = pymysql.connect(host='localhost', user='root', password='mirror123', database='ymx')
+        cursor = db.cursor()
+        cursor.execute('select google_host from t_ymx_google_host')
+        data = cursor.fetchall()
+        for row in data:
+            self.myRedis.sadd(self.googleHost,row[0])
+
 
     def isLastPage(self, text):
         if 'pnnext' in text:
@@ -62,7 +74,7 @@ class SearchGoogle:
             nextPage = self.getDownloadLink(keyword, pageNum)
             print('next page link:' + nextPage)
             nextPageLinks = self.parsePageLink(nextPage)
-            print('next page link:' + nextPageLinks)
+            print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.detailLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
@@ -73,6 +85,7 @@ class SearchGoogle:
     def close(self):
         self.keywordDao.close()
         self.detailLinkDao.close()
+        self.myRedis.close()
 
 
 if __name__ == '__main__':
@@ -84,6 +97,7 @@ if __name__ == '__main__':
             id2keyword = keyWordDao.popKeyWordForRedis()
             if id2keyword is None:
                 print('no keyword stop 3 second')
+                time.sleep(3)
                 continue
             else:
                 id2keywordDic = eval(id2keyword)
