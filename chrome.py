@@ -19,10 +19,25 @@ class Chrome:
 
 
     def download(self,url):
-        print('download')
-        self.driver.get(url)
-        page = self.driver.page_source
-        print('download finish')
+        try:
+            try:
+                print('download')
+                self.driver.get(url)
+                print('download finish')
+                page = self.driver.page_source
+                print('page_source finish')
+            except:
+                print('download')
+                self.driver.get(url)
+                print('download finish')
+                page = self.driver.page_source
+                print('page_source finish')
+        except:
+            print('download')
+            self.driver.get(url)
+            print('download finish')
+            page = self.driver.page_source
+            print('page_source finish')
         return page
 
     def close(self):

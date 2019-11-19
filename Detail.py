@@ -245,12 +245,9 @@ class Detail:
 if __name__ == '__main__':
     while True:
         detail = Detail()
-        try:
-            detail.run()
-            detail.close()
-        except:
-            print('detail fail')
-            detail.close()
+        detail.run()
+        detail.close()
+
 
     # dateStr = 'April 5, 2019'
     # url = 'http://www.baidu.com/link?url=W030YCfQnj265IjnUV5UGGYPxT2TVAX5zGsKzVSXw9A_afUXjv0GiqnVmpDQJHu3JyutO7nV2pnzn-F8S-p_FPBS97P7eGMSx__cDOTUJwHLvotAbEM8p_4uoNYF7e9uaGWS2sC1N04HEJ0Yzd5pqa'
