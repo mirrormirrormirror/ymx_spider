@@ -24,6 +24,7 @@ class Chrome:
             page = self.driver.page_source
             print('page_source finish')
         except TimeoutException:
+            print('time out')
             # 报错后就强制停止加载
             # 这里是js控制
             page = self.driver.page_source
