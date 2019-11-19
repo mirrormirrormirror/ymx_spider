@@ -4,6 +4,7 @@ from selenium import webdriver
 import re
 from KeywordDao import KeywordDao
 from DetailLinkDao import DetailLinkDao
+from chrome import Chrome
 
 
 class SearchGoogle:
@@ -12,6 +13,8 @@ class SearchGoogle:
         self.baseSearchUrl = 'https://www.google.com/search?q=site:amazon.ca %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
+        self.chrome = Chrome()
+        self.chrome.driver.get('https://www.google.com')
 
     def getKeyword2link(self, keywordId, allLinks):
         keywordId2link = list()
@@ -29,12 +32,9 @@ class SearchGoogle:
         return pageLinks
 
     def download(self, url):
-        response = requests.get(url)
-        if response.status_code == 200:
-            return response.text
-        else:
-            print('state_code abnormal' + str(response.status_code))
-            return None
+        text = self.chrome.download(url)
+
+        return text
 
     def getPageLink(self, keyword, pageNum):
         pass
