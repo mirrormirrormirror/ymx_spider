@@ -24,6 +24,7 @@ class KeywordDao:
         ids = '-1'
         batchUpdateKeywordJobStateSql = 'update t_ymx_keyword set job_state=1 where id in (%s)'
         id2keyword = self.getId2keyword()
+        print('id2keyword:'+str(id2keyword))
         for keywordId, keyword in zip(id2keyword.keys(), id2keyword.values()):
             ids = ids + ',' + str(keywordId)
             self.myRedis.sadd(self.seedKeyword, str((keywordId, keyword)))
@@ -49,6 +50,7 @@ class KeywordDao:
     def getId2keyword(self):
         id2keyword = {}
         selectKeyWordSql = 'select id,keyword from t_ymx_keyword where job_state=0 order by id limit %s'
+        print('selectKeyWordSql:'+selectKeyWordSql % self.limit)
         self.cursor.execute(selectKeyWordSql % self.limit)
         data = self.cursor.fetchall()
         for row in data:

@@ -1,8 +1,8 @@
-
 import pymysql
 import redis
 from KeywordDao import KeywordDao
-from DirDetailLinkDao import  DirDetailLinkDao
+from DirDetailLinkDao import DirDetailLinkDao
+
 
 class DetailLinkDao:
 
@@ -35,10 +35,10 @@ class DetailLinkDao:
         keywordDao = KeywordDao()
         keyword = keywordDao.getKeywordById(keywordId)
         keywordDao.close()
-        return keyword,keywordId
+        return keyword, keywordId
 
     def batchInsert(self, keywordId2detailLink):
-        print('keywordId2detailLink:'+str(keywordId2detailLink))
+        print('keywordId2detailLink:' + str(keywordId2detailLink))
         batchInsertDetailLinkSql = 'INSERT INTO `t_ymx_detail_link` ( `detail_link`,  `keyword_id`) VALUES'
         for row in keywordId2detailLink:
             batchInsertDetailLinkSql = batchInsertDetailLinkSql + ' ("%s",%s)' % (row[0], row[1]) + ','
@@ -51,6 +51,7 @@ class DetailLinkDao:
         ids = '-1'
         batchUpdateDetailLinkJobStateSql = 'update t_ymx_detail_link set job_state=1 where id in (%s)'
         id2detailLink = self.getId2detailLink()
+        print('id2detailLink:' + str(id2detailLink))
         for detailLinkId, detailLink in zip(id2detailLink.keys(), id2detailLink.values()):
             ids = ids + ',' + str(detailLinkId)
             self.myRedis.sadd(self.seedDetailLink, str((detailLinkId, detailLink)))
@@ -70,6 +71,7 @@ class DetailLinkDao:
     def getId2detailLink(self):
         id2detailLink = {}
         selectId2detailLinkSql = 'select id,detail_link from t_ymx_detail_link where job_state=0 order by id limit %s'
+        print('selectId2detailLinkSql:' + selectId2detailLinkSql % self.limit)
         self.cursor.execute(selectId2detailLinkSql % self.limit)
         data = self.cursor.fetchall()
         for row in data:
