@@ -53,8 +53,8 @@
       <file leaf-file-name="chrome.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chrome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+            <state relative-caret-position="387">
+              <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -127,8 +127,8 @@
       <file leaf-file-name="Detail.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="148" column="27" lean-forward="false" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+            <state relative-caret-position="169">
+              <caret line="179" column="46" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="46" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -180,7 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>B00ISS2PCW</find>
       <find>结构</find>
       <find>text</find>
       <find>title</find>
@@ -210,6 +209,7 @@
       <find>detail link len</find>
       <find>detail fail</find>
       <find>row</find>
+      <find>isI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -683,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574137658489</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="utf-8">
+      <created>1574137833242</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1574137833242</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -997,17 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DetailDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <marker date="1574134860494" expanded="true" signature="514:686" ph="INSERT INTO `t_ymx_detail`... " />
-            <marker date="1574134860494" expanded="true" signature="514:733" ph="INSERT INTO `t_ymx_detail`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DetailLinkDao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -1068,10 +1064,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DetailDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <marker date="1574134860494" expanded="true" signature="514:686" ph="INSERT INTO `t_ymx_detail`... " />
+            <marker date="1574134860494" expanded="true" signature="514:733" ph="INSERT INTO `t_ymx_detail`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="148" column="27" lean-forward="false" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+        <state relative-caret-position="169">
+          <caret line="179" column="46" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="46" />
           <folding>
             <element signature="e#1#16#0" expanded="true" />
           </folding>
@@ -1080,8 +1087,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chrome.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="387">
+          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>

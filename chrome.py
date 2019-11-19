@@ -18,16 +18,22 @@ class Chrome:
 
     def download(self, url):
         try:
-            print('download')
-            self.driver.get(url)
-            print('download finish')
-            page = self.driver.page_source
-            print('page_source finish')
-        except TimeoutException:
-            print('time out')
-            # 报错后就强制停止加载
-            # 这里是js控制
-            page = self.driver.page_source
+            try:
+                print('download')
+                self.driver.get(url)
+                print('download finish')
+                page = self.driver.page_source
+                print('page_source finish')
+            except TimeoutException:
+                print('time out')
+                # 报错后就强制停止加载
+                # 这里是js控制
+                self.driver.close()
+                self.__init__()
+                self.driver.get(url)
+                page = self.driver.page_source
+        except:
+            page = 'Enter the characters you see below'
         return page
 
     def close(self):
