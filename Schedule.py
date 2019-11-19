@@ -34,4 +34,4 @@ if __name__ == '__main__':
         else:
             print('redis seed_dir_detail_link normal')
 
-        time.sleep(5)
+        time.sleep(3)
