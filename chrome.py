@@ -14,6 +14,7 @@ class Chrome:
         chrome_options.add_argument('--headless')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options = chrome_options)
+        self.driver.get('https://www.amazon.ca')
 
 
     def download(self,url):
