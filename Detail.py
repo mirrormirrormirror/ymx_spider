@@ -1,4 +1,3 @@
-
 import requests
 import re
 from DetailLinkDao import DetailLinkDao
@@ -24,7 +23,6 @@ class Detail:
             reviews = re.search(r'\d+', reviewsStr.group())
             return reviews.group()
 
-
     def parseAsin(self, text):
         asinPattern = 'name="ASIN" value="\w+"'
         asinStr = re.search(asinPattern, text).group()
@@ -40,7 +38,6 @@ class Detail:
         startsBefore = startsStr.split('a-icon-alt">')[1].split(' out of ')[0]
         starts = startsBefore
         return starts
-
 
     def parseBrand(self, text):
         brandPattern = '<a id="bylineInfo" class="a-link-normal" href(.*?)</a>'
@@ -113,7 +110,6 @@ class Detail:
                 time.sleep(10)
                 return None
 
-
             reviews = self.parseReviews(page)
             if reviews is None:
                 print('page abnormal skip')
@@ -141,8 +137,10 @@ class Detail:
             row = {'asin': asin, 'stars': stars, 'brand': brand, 'lastReviewTime': lastReviewTimeFormat,
                    'isVariant': isVariant,
                    'reviews': reviews, 'title': title}
-            rowOther = row
-            rowOther['title'] = 'title'
+            rowOther = {'asin': asin, 'stars': stars, 'brand': brand, 'lastReviewTime': lastReviewTimeFormat,
+                   'isVariant': isVariant,
+                   'reviews': reviews, 'title': 'title'}
+
             print(rowOther)
             return row
 
@@ -237,7 +235,7 @@ class Detail:
             detailDao.insert(detailData['asin'], float(detailData['stars']), int(detailData['reviews']),
                              detailData['lastReviewTime'], detailData['title'], detailData['brand'],
                              keyword2keywordId[0],
-                             keyword2keywordId[1], 'https://www.amazon.com/dp/' + detailData['asin'], detailLinkId,
+                             keyword2keywordId[1], detailLink, detailLinkId,
                              int(detailData['isVariant']))
             detailLinkDao.updateJobStateById(2, detailLinkId)
             detailLinkDao.close()
@@ -249,7 +247,6 @@ if __name__ == '__main__':
         detail = Detail()
         detail.run()
         detail.close()
-
 
     # dateStr = 'April 5, 2019'
     # url = 'http://www.baidu.com/link?url=W030YCfQnj265IjnUV5UGGYPxT2TVAX5zGsKzVSXw9A_afUXjv0GiqnVmpDQJHu3JyutO7nV2pnzn-F8S-p_FPBS97P7eGMSx__cDOTUJwHLvotAbEM8p_4uoNYF7e9uaGWS2sC1N04HEJ0Yzd5pqa'
