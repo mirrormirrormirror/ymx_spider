@@ -26,7 +26,6 @@ class Chrome:
         except TimeoutException:
             # 报错后就强制停止加载
             # 这里是js控制
-            self.driver.execute_script('window.stop()')
             page = self.driver.page_source
         return page
 
