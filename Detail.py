@@ -56,7 +56,7 @@ class Detail:
         lastReviewTimeStr = text.split("&&&")[2]
         lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', lastReviewTimeStr)
         if lastReviewTimeStrGroup is None:
-            return 'January 01, 2050'
+            return 'January 01, 2025'
         else:
             lastReviewTimeStr = lastReviewTimeStrGroup.group()
             lastReviewTimeResult = lastReviewTimeStr.split('>')[1].split('<')[0]

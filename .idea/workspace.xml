@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Schedule.py" afterPath="$PROJECT_DIR$/Schedule.py" />
+      <change beforePath="$PROJECT_DIR$/Detail.py" afterPath="$PROJECT_DIR$/Detail.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,26 +38,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Schedule.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schedule.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Schedule.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="439">
               <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
               <folding>
                 <element signature="e#1#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailDao.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DetailDao.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="102" />
-              <folding>
-                <marker date="1574129602175" expanded="true" signature="375:547" ph="INSERT INTO `t_ymx_detail`... " />
-                <marker date="1574129602175" expanded="true" signature="375:594" ph="INSERT INTO `t_ymx_detail`... " />
               </folding>
             </state>
           </provider>
@@ -171,6 +158,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Detail.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <folding>
+                <element signature="e#1#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -239,7 +238,6 @@
         <option value="$PROJECT_DIR$/text8.py" />
         <option value="$PROJECT_DIR$/Search.py" />
         <option value="$PROJECT_DIR$/chrome.py" />
-        <option value="$PROJECT_DIR$/Detail.py" />
         <option value="$PROJECT_DIR$/Download.py" />
         <option value="$PROJECT_DIR$/inputKeyword.py" />
         <option value="$PROJECT_DIR$/DetailDao.py" />
@@ -248,6 +246,7 @@
         <option value="$PROJECT_DIR$/KeywordDao.py" />
         <option value="$PROJECT_DIR$/SearchGoogle.py" />
         <option value="$PROJECT_DIR$/Schedule.py" />
+        <option value="$PROJECT_DIR$/Detail.py" />
       </list>
     </option>
   </component>
@@ -560,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574130188427</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="3秒">
+      <created>1574130341229</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574130341229</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -602,7 +608,8 @@
     <MESSAGE value="编码问题" />
     <MESSAGE value="UNICODE" />
     <MESSAGE value="DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB" />
+    <MESSAGE value="3秒" />
+    <option name="LAST_COMMIT_MESSAGE" value="3秒" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,16 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DetailDao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -960,6 +957,16 @@
           <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding>
             <element signature="e#1#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
