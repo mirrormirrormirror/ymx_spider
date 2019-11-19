@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -34,7 +33,7 @@ class SearchGoogle:
         if response.status_code == 200:
             return response.text
         else:
-            print('state_code abnormal'+str(response.status_code))
+            print('state_code abnormal' + str(response.status_code))
             return None
 
     def getPageLink(self, keyword, pageNum):
@@ -51,6 +50,7 @@ class SearchGoogle:
         keywordId = keywordId2Keyword[0]
         # 获取第一页
         url = self.getDownloadLink(keyword, 0)
+        print('one page link:' + url)
         text = self.download(url)
         pageLinks = self.parsePageLink(text)
         keyword2link = self.getKeyword2link(keywordId, pageLinks)
@@ -60,7 +60,9 @@ class SearchGoogle:
         pageNum = 1
         while not isLastPage:
             nextPage = self.getDownloadLink(keyword, pageNum)
+            print('next page link:' + nextPage)
             nextPageLinks = self.parsePageLink(nextPage)
+            print('next page link:' + nextPageLinks)
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.detailLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
