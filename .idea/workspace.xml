@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="">
+    <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="utf-8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/DetailDao.py" afterPath="$PROJECT_DIR$/DetailDao.py" />
+      <change beforePath="$PROJECT_DIR$/Detail.py" afterPath="$PROJECT_DIR$/Detail.py" />
+      <change beforePath="$PROJECT_DIR$/chrome.py" afterPath="$PROJECT_DIR$/chrome.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +54,8 @@
       <file leaf-file-name="chrome.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chrome.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state relative-caret-position="304">
+              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -75,16 +76,6 @@
                 <marker date="1574131537939" expanded="true" signature="3328:3381" ph="update detail_link... " />
                 <marker date="1574131537939" expanded="true" signature="3328:3383" ph="update detail_link... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inputKeyword.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inputKeyword.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -142,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Detail.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Detail.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+            <state relative-caret-position="417">
+              <caret line="251" column="26" lean-forward="false" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="26" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -154,15 +145,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailDao.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailDao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DetailDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <marker date="1574134860494" expanded="true" signature="514:686" ph="INSERT INTO `t_ymx_detail`... " />
                 <marker date="1574134860494" expanded="true" signature="514:733" ph="INSERT INTO `t_ymx_detail`... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keywor20190008.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/keyword/keywor20190008.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -239,11 +240,11 @@
         <option value="$PROJECT_DIR$/DirDetailLinkDao.py" />
         <option value="$PROJECT_DIR$/SearchGoogle.py" />
         <option value="$PROJECT_DIR$/Schedule.py" />
-        <option value="$PROJECT_DIR$/Detail.py" />
         <option value="$PROJECT_DIR$/KeywordDao.py" />
         <option value="$PROJECT_DIR$/DetailLinkDao.py" />
-        <option value="$PROJECT_DIR$/chrome.py" />
         <option value="$PROJECT_DIR$/DetailDao.py" />
+        <option value="$PROJECT_DIR$/chrome.py" />
+        <option value="$PROJECT_DIR$/Detail.py" />
       </list>
     </option>
   </component>
@@ -279,6 +280,11 @@
             <path>
               <item name="ymx_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="ymx_project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ymx_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ymx_project" type="462c0819:PsiDirectoryNode" />
+              <item name="keyword" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ymx_project" type="b2602c69:ProjectViewProjectNode" />
@@ -612,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574134522717</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="utf-8">
+      <created>1574134863711</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1574134863711</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -789,13 +802,6 @@
         <state relative-caret-position="210">
           <caret line="235" column="27" lean-forward="false" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keyword/keywor20190008.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -985,31 +991,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Detail.py">
+    <entry file="file://$PROJECT_DIR$/keyword/keywor20190008.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chrome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="144">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DetailDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        <state relative-caret-position="340">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
             <marker date="1574134860494" expanded="true" signature="514:686" ph="INSERT INTO `t_ymx_detail`... " />
             <marker date="1574134860494" expanded="true" signature="514:733" ph="INSERT INTO `t_ymx_detail`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chrome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="251" column="26" lean-forward="false" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="26" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
