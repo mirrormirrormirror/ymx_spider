@@ -10,10 +10,10 @@ class DetailDao:
                detail_link_id, is_variant):
         insertSql = 'INSERT INTO `t_ymx_detail` ( `asin`, `stars`, `reviews`, `last_review_time`, `title`, `brand`, `keyword`, `keyword_id`,`detail_link`, `detail_link_id`, `is_variant`) VALUES ("%s",%s,%s,"%s","%s","%s","%s",%s,"%s",%s,%s) '
         print(insertSql % (
-            asin, stars, reviews, last_review_time, pymysql.escape_string(title.encode('utf-8')), brand, keyword, keyword_id,
+            asin, stars, reviews, last_review_time, pymysql.escape_string(title.encode('utf-8').decode()), brand, keyword, keyword_id,
             detail_link, detail_link_id, is_variant))
         self.cursor.execute(insertSql % (
-            asin, stars, reviews, last_review_time, pymysql.escape_string(title.encode('utf-8')), brand, keyword, keyword_id,
+            asin, stars, reviews, last_review_time, pymysql.escape_string(title.encode('utf-8').decode()), brand, keyword, keyword_id,
             detail_link, detail_link_id, is_variant))
         self.db.commit()
 
