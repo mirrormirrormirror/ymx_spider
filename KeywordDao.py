@@ -28,7 +28,9 @@ class KeywordDao:
         for keywordId, keyword in zip(id2keyword.keys(), id2keyword.values()):
             ids = ids + ',' + str(keywordId)
             print(str((keywordId, keyword)))
-            self.myRedis.sadd(self.seedKeyword, str((keywordId, keyword)))
+            result = self.myRedis.sadd(self.seedKeyword, str((keywordId, keyword)))
+            if result > 0:
+                print('put succese')
         print(batchUpdateKeywordJobStateSql % ids)
         self.cursor.execute(batchUpdateKeywordJobStateSql % ids)
         self.db.commit()
