@@ -11,7 +11,7 @@ import time
 class SearchGoogle:
 
     def __init__(self):
-        self.iniHostToRedis()
+
         self.baseSearchUrl = '%s/search?q=site:amazon.ca %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
@@ -48,8 +48,8 @@ class SearchGoogle:
         cursor.execute('select google_host from t_ymx_google_host')
         data = cursor.fetchall()
         for row in data:
-            self.myRedis.sadd(self.googleHost,row[0])
-
+            print(row)
+            self.myRedis.sadd(self.googleHost,str(row[0]))
 
     def isLastPage(self, text):
         if 'pnnext' in text:

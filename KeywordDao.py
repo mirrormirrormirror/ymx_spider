@@ -91,6 +91,6 @@ if __name__ == '__main__':
     # print(isLowLevelKeywordForRids)
 
     # keywordDao.updateKeywordState(20,3)
-    id2keyword = keywordDao.popId2keyword()
-    print(id2keyword.decode('utf-8'))
-    keywordDao.close()
+    id2keyword = keywordDao.putKeywordToRedis()
+    # print(id2keyword.decode('utf-8'))
+    # keywordDao.close()
