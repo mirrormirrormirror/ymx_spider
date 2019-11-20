@@ -27,7 +27,7 @@
     <SUITE FILE_PATH="coverage/ymx_project$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1573890265717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ymx_project$Download.coverage" NAME="Download Coverage Results" MODIFIED="1573868103390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ymx_project$DetailDao.coverage" NAME="DetailDao Coverage Results" MODIFIED="1573784364722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ymx_project$KeywordDao.coverage" NAME="KeywordDao Coverage Results" MODIFIED="1574175791932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ymx_project$KeywordDao.coverage" NAME="KeywordDao Coverage Results" MODIFIED="1574226133978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ymx_project$DetailLinkDao.coverage" NAME="DetailLinkDao Coverage Results" MODIFIED="1573954951443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ymx_project$test_.coverage" NAME="test* Coverage Results" MODIFIED="1574000348709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ymx_project$search.coverage" NAME="search Coverage Results" MODIFIED="1573566485143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/Schedule.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -95,8 +95,8 @@
       <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="98" column="37" lean-forward="true" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
+            <state relative-caret-position="1596">
+              <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1574176185853" expanded="true" signature="1472:1513" ph="select googl... t_ymx_google_host" />
@@ -108,17 +108,15 @@
       <file leaf-file-name="KeywordDao.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KeywordDao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+            <state relative-caret-position="108">
+              <caret line="6" column="81" lean-forward="false" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
               <folding>
                 <element signature="e#1#15#0" expanded="true" />
-                <marker date="1574176700738" expanded="true" signature="672:725" ph="update t_ymx_keyword... " />
-                <marker date="1574176700738" expanded="true" signature="1597:1648" ph="update t_ymx_keyword... " />
-                <marker date="1574176700738" expanded="true" signature="1832:1905" ph="select id,ke... t_ymx_keyword" />
-                <marker date="1574176700738" expanded="true" signature="1832:1907" ph="select id,ke... t_ymx_keyword" />
-                <marker date="1574176700738" expanded="true" signature="2230:2277" ph="select keywo... t_ymx_keyword" />
-                <marker date="1574176700738" expanded="true" signature="2591:2653" ph="INSERT INTO `t_ymx_keyword`... " />
-                <marker date="1574176700738" expanded="true" signature="2591:2662" ph="INSERT INTO `t_ymx_keyword`... " />
+                <marker date="1574226338934" expanded="true" signature="671:724" ph="update t_ymx_keyword... " />
+                <marker date="1574226338934" expanded="true" signature="1669:1720" ph="update t_ymx_keyword... " />
+                <marker date="1574226338934" expanded="true" signature="1904:1979" ph="select id,ke... t_ymx_keyword" />
+                <marker date="1574226338934" expanded="true" signature="2302:2349" ph="select keywo... t_ymx_keyword" />
+                <marker date="1574226338934" expanded="true" signature="2663:2734" ph="INSERT INTO `t_ymx_keyword`... " />
               </folding>
             </state>
           </provider>
@@ -180,7 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>text</find>
       <find>FS-CLP-desktop-page-container</find>
       <find>getKey</find>
       <find>Enter the characters you see below</find>
@@ -210,6 +207,7 @@
       <find>isI</find>
       <find>-1</find>
       <find>title</find>
+      <find>host</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -333,7 +331,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SearchGoogle">
+  <component name="RunManager" selected="Python.KeywordDao">
     <configuration name="KeywordDao" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -438,8 +436,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.SearchGoogle" />
-        <item index="1" class="java.lang.String" itemvalue="Python.KeywordDao" />
+        <item index="0" class="java.lang.String" itemvalue="Python.KeywordDao" />
+        <item index="1" class="java.lang.String" itemvalue="Python.SearchGoogle" />
         <item index="2" class="java.lang.String" itemvalue="Python.inputGoogleLink" />
         <item index="3" class="java.lang.String" itemvalue="Python.inputKeyword" />
         <item index="4" class="java.lang.String" itemvalue="Python.Schedule" />
@@ -719,7 +717,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574176186094</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="utf-8">
+      <created>1574176703786</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1574176703786</updated>
+    </task>
+    <task id="LOCAL-00039" summary="utf-8">
+      <created>1574224751947</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1574224751947</updated>
+    </task>
+    <task id="LOCAL-00040" summary="utf-8">
+      <created>1574225834159</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1574225834159</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -727,10 +746,11 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29411766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22117648" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21111111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -740,7 +760,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38705882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38705882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1096,10 +1116,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Schedule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="98" column="37" lean-forward="true" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
+        <state relative-caret-position="1596">
+          <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1574176185853" expanded="true" signature="1472:1513" ph="select googl... t_ymx_google_host" />
@@ -1107,27 +1135,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Schedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KeywordDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="108">
+          <caret line="6" column="81" lean-forward="false" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <marker date="1574176700738" expanded="true" signature="672:725" ph="update t_ymx_keyword... " />
-            <marker date="1574176700738" expanded="true" signature="1597:1648" ph="update t_ymx_keyword... " />
-            <marker date="1574176700738" expanded="true" signature="1832:1905" ph="select id,ke... t_ymx_keyword" />
-            <marker date="1574176700738" expanded="true" signature="1832:1907" ph="select id,ke... t_ymx_keyword" />
-            <marker date="1574176700738" expanded="true" signature="2230:2277" ph="select keywo... t_ymx_keyword" />
-            <marker date="1574176700738" expanded="true" signature="2591:2653" ph="INSERT INTO `t_ymx_keyword`... " />
-            <marker date="1574176700738" expanded="true" signature="2591:2662" ph="INSERT INTO `t_ymx_keyword`... " />
+            <marker date="1574226338934" expanded="true" signature="671:724" ph="update t_ymx_keyword... " />
+            <marker date="1574226338934" expanded="true" signature="1669:1720" ph="update t_ymx_keyword... " />
+            <marker date="1574226338934" expanded="true" signature="1904:1979" ph="select id,ke... t_ymx_keyword" />
+            <marker date="1574226338934" expanded="true" signature="2302:2349" ph="select keywo... t_ymx_keyword" />
+            <marker date="1574226338934" expanded="true" signature="2663:2734" ph="INSERT INTO `t_ymx_keyword`... " />
           </folding>
         </state>
       </provider>
