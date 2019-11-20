@@ -31,7 +31,7 @@ class SearchGoogle:
 
     def getDownloadLink(self, keyword, pageNum):
         host = self.myRedis.srandmember(self.googleHost)
-        return self.baseSearchUrl % (host,keyword, pageNum * 10)
+        return self.baseSearchUrl % (host.decode('utf-8'),keyword, pageNum * 10)
 
     def parsePageLink(self, text):
         pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
