@@ -9,7 +9,7 @@ class KeywordDao:
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
 
-        self.seedKeyword = 'seed_keyword'
+        self.seedKeyword = 'seed_ymx_keyword'
         self.limit = 10
 
     def popKeyWordForRedis(self):
