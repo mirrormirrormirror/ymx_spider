@@ -15,7 +15,7 @@ class SearchGoogle:
         self.baseSearchUrl = '%s/search?q=site:amazon.ca %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
-        # self.chrome = Chrome()
+        self.chrome = Chrome()
         # self.chrome.driver.get('https://www.google.com')
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
@@ -39,7 +39,8 @@ class SearchGoogle:
         return pageLinks
 
     def download(self, url):
-        text = requests.get(url).text
+        # text = requests.get(url).text
+        text = self.chrome.download(url)
         return text
 
     def iniHostToRedis(self):
@@ -86,6 +87,7 @@ class SearchGoogle:
         self.keywordDao.close()
         self.detailLinkDao.close()
         self.myRedis.close()
+        self.chrome.close()
 
 
 if __name__ == '__main__':

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc98cb0d-eb5b-478b-8ba1-9a70b918e893" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/DetailLinkDao.py" afterPath="$PROJECT_DIR$/DetailLinkDao.py" />
-      <change beforePath="$PROJECT_DIR$/KeywordDao.py" afterPath="$PROJECT_DIR$/KeywordDao.py" />
       <change beforePath="$PROJECT_DIR$/SearchGoogle.py" afterPath="$PROJECT_DIR$/SearchGoogle.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,13 +46,25 @@
               <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1574226694440" expanded="true" signature="562:614" ph="select keywo... t_ymx_detail_link" />
-                <marker date="1574226694440" expanded="true" signature="562:616" ph="select keywo... t_ymx_detail_link" />
-                <marker date="1574226694440" expanded="true" signature="1426:1496" ph="insert into test... " />
-                <marker date="1574226694440" expanded="true" signature="1960:2017" ph="update t_ymx_detail_link... " />
-                <marker date="1574226694440" expanded="true" signature="2868:2951" ph="select id,de... t_ymx_detail_link" />
-                <marker date="1574226694440" expanded="true" signature="3324:3377" ph="update detail_link... " />
-                <marker date="1574226694440" expanded="true" signature="3324:3379" ph="update detail_link... " />
+                <marker date="1574227417408" expanded="true" signature="566:618" ph="select keywo... t_ymx_detail_link" />
+                <marker date="1574227417408" expanded="true" signature="566:620" ph="select keywo... t_ymx_detail_link" />
+                <marker date="1574227417408" expanded="true" signature="1430:1500" ph="insert into test... " />
+                <marker date="1574227417408" expanded="true" signature="1964:2021" ph="update t_ymx_detail_link... " />
+                <marker date="1574227417408" expanded="true" signature="2872:2955" ph="select id,de... t_ymx_detail_link" />
+                <marker date="1574227417408" expanded="true" signature="3328:3381" ph="update detail_link... " />
+                <marker date="1574227417408" expanded="true" signature="3328:3383" ph="update detail_link... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chrome.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chrome.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,11 +107,11 @@
       <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1574227381019" expanded="true" signature="1439:1480" ph="select googl... t_ymx_google_host" />
+                <marker date="1574256375338" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
               </folding>
             </state>
           </provider>
@@ -124,11 +134,11 @@
               <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding>
                 <element signature="e#1#15#0" expanded="true" />
-                <marker date="1574226694444" expanded="true" signature="667:720" ph="update t_ymx_keyword... " />
-                <marker date="1574226694444" expanded="true" signature="1665:1716" ph="update t_ymx_keyword... " />
-                <marker date="1574226694444" expanded="true" signature="1900:1975" ph="select id,ke... t_ymx_keyword" />
-                <marker date="1574226694444" expanded="true" signature="2298:2345" ph="select keywo... t_ymx_keyword" />
-                <marker date="1574226694444" expanded="true" signature="2659:2730" ph="INSERT INTO `t_ymx_keyword`... " />
+                <marker date="1574227454118" expanded="true" signature="676:729" ph="update t_ymx_keyword... " />
+                <marker date="1574227454118" expanded="true" signature="1674:1725" ph="update t_ymx_keyword... " />
+                <marker date="1574227454118" expanded="true" signature="1909:1984" ph="select id,ke... t_ymx_keyword" />
+                <marker date="1574227454118" expanded="true" signature="2307:2354" ph="select keywo... t_ymx_keyword" />
+                <marker date="1574227454118" expanded="true" signature="2668:2739" ph="INSERT INTO `t_ymx_keyword`... " />
               </folding>
             </state>
           </provider>
@@ -143,16 +153,6 @@
                 <marker date="1574134860494" expanded="true" signature="514:686" ph="INSERT INTO `t_ymx_detail`... " />
                 <marker date="1574134860494" expanded="true" signature="514:733" ph="INSERT INTO `t_ymx_detail`... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keywor20190008.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/keyword/keywor20190008.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="136" column="20" lean-forward="true" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,7 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FS-CLP-desktop-page-container</find>
       <find>getKey</find>
       <find>Enter the characters you see below</find>
       <find>a-box-inner</find>
@@ -208,6 +207,7 @@
       <find>-1</find>
       <find>title</find>
       <find>host</find>
+      <find>reque</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -745,7 +745,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574226345339</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="REDIS">
+      <created>1574227454350</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1574227454350</updated>
+    </task>
+    <task id="LOCAL-00043" summary="REDIS">
+      <created>1574255580712</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1574255580712</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -767,7 +781,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38705882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2564706" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -809,12 +823,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SearchGoogle.py</url>
-          <line>45</line>
+          <line>46</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SearchGoogle.py</url>
-          <line>94</line>
+          <line>96</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
@@ -1060,16 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chrome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Detail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -1149,13 +1153,13 @@
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1574226694440" expanded="true" signature="562:614" ph="select keywo... t_ymx_detail_link" />
-            <marker date="1574226694440" expanded="true" signature="562:616" ph="select keywo... t_ymx_detail_link" />
-            <marker date="1574226694440" expanded="true" signature="1426:1496" ph="insert into test... " />
-            <marker date="1574226694440" expanded="true" signature="1960:2017" ph="update t_ymx_detail_link... " />
-            <marker date="1574226694440" expanded="true" signature="2868:2951" ph="select id,de... t_ymx_detail_link" />
-            <marker date="1574226694440" expanded="true" signature="3324:3377" ph="update detail_link... " />
-            <marker date="1574226694440" expanded="true" signature="3324:3379" ph="update detail_link... " />
+            <marker date="1574227417408" expanded="true" signature="566:618" ph="select keywo... t_ymx_detail_link" />
+            <marker date="1574227417408" expanded="true" signature="566:620" ph="select keywo... t_ymx_detail_link" />
+            <marker date="1574227417408" expanded="true" signature="1430:1500" ph="insert into test... " />
+            <marker date="1574227417408" expanded="true" signature="1964:2021" ph="update t_ymx_detail_link... " />
+            <marker date="1574227417408" expanded="true" signature="2872:2955" ph="select id,de... t_ymx_detail_link" />
+            <marker date="1574227417408" expanded="true" signature="3328:3381" ph="update detail_link... " />
+            <marker date="1574227417408" expanded="true" signature="3328:3383" ph="update detail_link... " />
           </folding>
         </state>
       </provider>
@@ -1166,22 +1170,32 @@
           <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
           <folding>
             <element signature="e#1#15#0" expanded="true" />
-            <marker date="1574226694444" expanded="true" signature="667:720" ph="update t_ymx_keyword... " />
-            <marker date="1574226694444" expanded="true" signature="1665:1716" ph="update t_ymx_keyword... " />
-            <marker date="1574226694444" expanded="true" signature="1900:1975" ph="select id,ke... t_ymx_keyword" />
-            <marker date="1574226694444" expanded="true" signature="2298:2345" ph="select keywo... t_ymx_keyword" />
-            <marker date="1574226694444" expanded="true" signature="2659:2730" ph="INSERT INTO `t_ymx_keyword`... " />
+            <marker date="1574227454118" expanded="true" signature="676:729" ph="update t_ymx_keyword... " />
+            <marker date="1574227454118" expanded="true" signature="1674:1725" ph="update t_ymx_keyword... " />
+            <marker date="1574227454118" expanded="true" signature="1909:1984" ph="select id,ke... t_ymx_keyword" />
+            <marker date="1574227454118" expanded="true" signature="2307:2354" ph="select keywo... t_ymx_keyword" />
+            <marker date="1574227454118" expanded="true" signature="2668:2739" ph="INSERT INTO `t_ymx_keyword`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chrome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1574227381019" expanded="true" signature="1439:1480" ph="select googl... t_ymx_google_host" />
+            <marker date="1574256375338" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
           </folding>
         </state>
       </provider>
