@@ -78,10 +78,10 @@
         <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+              <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1574344720914" expanded="true" signature="1792:1833" ph="select googl... t_ymx_google_host" />
+                <marker date="1574344791363" expanded="true" signature="1792:1833" ph="select googl... t_ymx_google_host" />
               </folding>
             </state>
           </provider>
@@ -459,13 +459,6 @@
       <option name="presentableId" value="Default" />
       <updated>1573284287413</updated>
     </task>
-    <task id="LOCAL-00003" summary="编码问题">
-      <created>1574084951670</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1574084951670</updated>
-    </task>
     <task id="LOCAL-00004" summary="编码问题">
       <created>1574085298582</created>
       <option name="number" value="00004" />
@@ -802,7 +795,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574344344091</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="sleep">
+      <created>1574344727903</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1574344727903</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -854,7 +854,8 @@
     <MESSAGE value="slp" />
     <MESSAGE value="解析连接" />
     <MESSAGE value="+log" />
-    <option name="LAST_COMMIT_MESSAGE" value="+log" />
+    <MESSAGE value="sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="sleep" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1254,10 +1255,10 @@
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1574344720914" expanded="true" signature="1792:1833" ph="select googl... t_ymx_google_host" />
+            <marker date="1574344791363" expanded="true" signature="1792:1833" ph="select googl... t_ymx_google_host" />
           </folding>
         </state>
       </provider>
