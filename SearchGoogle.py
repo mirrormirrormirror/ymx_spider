@@ -49,7 +49,6 @@ class SearchGoogle:
         cursor.execute('select google_host from t_ymx_google_host')
         data = cursor.fetchall()
         for row in data:
-            print(row)
             self.myRedis.sadd(self.googleHost,str(row[0]))
 
     def isLastPage(self, text):
