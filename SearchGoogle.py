@@ -65,6 +65,7 @@ class SearchGoogle:
             return True
 
     def run(self, keywordId2Keyword):
+        print('run---')
         keyword = keywordId2Keyword[1]
         keywordId = keywordId2Keyword[0]
         # 获取第一页
@@ -116,6 +117,7 @@ if __name__ == '__main__':
                 time.sleep(3)
                 continue
             else:
+                print('go to run keyword')
                 id2keywordDic = eval(id2keyword)
                 keyWord = id2keywordDic[1]
                 keywordId = id2keywordDic[0]
