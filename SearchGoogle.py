@@ -15,9 +15,13 @@ class SearchGoogle:
         print('google init')
         self.baseSearchUrl = '%s/search?q=inurl:www.amazon.ca/slp %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
+        print('init keywordDao finish')
         self.detailLinkDao = DetailLinkDao()
+        print('init detailLinkDao finish')
         self.slpLinkDao = SlpLinkDao()
+        print('init slpLinkDao finish')
         self.chrome = Chrome()
+        print('init chrome finish')
         # self.chrome.driver.get('https://www.google.com')
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
