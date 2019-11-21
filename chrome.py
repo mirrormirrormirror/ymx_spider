@@ -11,7 +11,7 @@ class Chrome:
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
         chrome_options.add_argument('--headless')
-        # chrome_options.add_argument('--proxy-server=%s' % 'http://159.203.87.130:3128')
+        chrome_options.add_argument('--proxy-server=%s' % 'http://167.71.205.62:8080')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
         self.driver.set_page_load_timeout(10)
