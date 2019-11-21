@@ -77,6 +77,8 @@ class SearchGoogle:
         self.slpLinkDao.batchInsert(keyword2slpLink)
         isLastPage = self.isLastPage(text)
         print('one page isLastPage:' + str(isLastPage))
+        if isLastPage:
+            time.sleep(10)
         pageNum = 1
         while not isLastPage:
             nextPage = self.getDownloadLink(keyword, pageNum)
