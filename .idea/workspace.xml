@@ -107,11 +107,11 @@
       <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1574256375338" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
+                <marker date="1574301212928" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
               </folding>
             </state>
           </provider>
@@ -759,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574255580712</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="REDIS">
+      <created>1574256378749</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1574256378749</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -828,7 +835,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SearchGoogle.py</url>
-          <line>96</line>
+          <line>97</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
@@ -1191,11 +1198,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="437">
+          <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1574256375338" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
+            <marker date="1574301212928" expanded="true" signature="1500:1541" ph="select googl... t_ymx_google_host" />
           </folding>
         </state>
       </provider>

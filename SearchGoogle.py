@@ -80,6 +80,7 @@ class SearchGoogle:
             self.detailLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
             isLastPage = self.isLastPage(text)
+            time.sleep(5)
             if not isLastPage:
                 pageNum = pageNum + 1
 
@@ -109,6 +110,7 @@ if __name__ == '__main__':
                 googleSearch.run(id2keywordDic)
             keyWordDao.close()
             detailLinkDao.close()
+            time.sleep(4)
         except:
             keyWordDao.close()
             detailLinkDao.close()
