@@ -22,7 +22,7 @@ class SearchGoogle:
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
-        self.iniHostToRedis()
+        # self.iniHostToRedis()
 
     def getKeyword2link(self, keywordId, allLinks):
         keywordId2link = list()
@@ -32,9 +32,9 @@ class SearchGoogle:
         return keywordId2link
 
     def getDownloadLink(self, keyword, pageNum):
-        print('getDownloadLink----')
-        host = self.myRedis.srandmember(self.googleHost)
-        return self.baseSearchUrl % (host.decode('utf-8'), keyword, pageNum * 10)
+        # print('getDownloadLink----')
+        # host = self.myRedis.srandmember(self.googleHost)
+        return self.baseSearchUrl % ('http://www.google.com', keyword, pageNum * 10)
 
     def parsePageLink(self, text):
         # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
@@ -110,7 +110,7 @@ if __name__ == '__main__':
             id2keyword = keyWordDao.popKeyWordForRedis()
             print(id2keyword)
 
-            print(time.strftime('%Y-%m-%d', time.localtime(time.time())))
+            print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
             if id2keyword is None:
                 print('no keyword stop 3 second')
                 time.sleep(3)
