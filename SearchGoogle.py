@@ -32,6 +32,7 @@ class SearchGoogle:
         return keywordId2link
 
     def getDownloadLink(self, keyword, pageNum):
+        print('getDownloadLink----')
         host = self.myRedis.srandmember(self.googleHost)
         return self.baseSearchUrl % (host.decode('utf-8'), keyword, pageNum * 10)
 
