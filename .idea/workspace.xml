@@ -77,11 +77,11 @@
       <file leaf-file-name="SearchGoogle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+            <state relative-caret-position="408">
+              <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1574346220120" expanded="true" signature="1801:1842" ph="select googl... t_ymx_google_host" />
+                <marker date="1574346395935" expanded="true" signature="1865:1906" ph="select googl... t_ymx_google_host" />
               </folding>
             </state>
           </provider>
@@ -459,13 +459,6 @@
       <option name="presentableId" value="Default" />
       <updated>1573284287413</updated>
     </task>
-    <task id="LOCAL-00007" summary="UNICODE">
-      <created>1574086705502</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1574086705502</updated>
-    </task>
     <task id="LOCAL-00008" summary="UNICODE">
       <created>1574086936599</created>
       <option name="number" value="00008" />
@@ -802,7 +795,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574345875758</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="代理">
+      <created>1574346225339</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1574346225339</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -874,7 +874,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SearchGoogle.py</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
@@ -1256,11 +1256,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchGoogle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+        <state relative-caret-position="408">
+          <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1574346220120" expanded="true" signature="1801:1842" ph="select googl... t_ymx_google_host" />
+            <marker date="1574346395935" expanded="true" signature="1865:1906" ph="select googl... t_ymx_google_host" />
           </folding>
         </state>
       </provider>

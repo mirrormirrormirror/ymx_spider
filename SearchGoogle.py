@@ -12,7 +12,7 @@ import time
 class SearchGoogle:
 
     def __init__(self):
-
+        print('google init')
         self.baseSearchUrl = '%s/search?q=inurl:www.amazon.ca/slp %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
@@ -22,6 +22,7 @@ class SearchGoogle:
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
+        print('google init finish')
         # self.iniHostToRedis()
 
     def getKeyword2link(self, keywordId, allLinks):
@@ -119,8 +120,11 @@ if __name__ == '__main__':
             else:
                 print('go to run keyword')
                 id2keywordDic = eval(id2keyword)
+                print(id2keywordDic)
                 keyWord = id2keywordDic[1]
+                print(keyWord)
                 keywordId = id2keywordDic[0]
+                print(keywordId)
                 googleSearch = SearchGoogle()
                 googleSearch.run(id2keywordDic)
             keyWordDao.close()
