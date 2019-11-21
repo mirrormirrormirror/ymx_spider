@@ -5,6 +5,7 @@ from DetailLinkDao import DetailLinkDao
 import pymysql
 from chrome import Chrome
 import redis
+from SlpLinkDao import SlpLinkDao
 import time
 
 
@@ -12,9 +13,10 @@ class SearchGoogle:
 
     def __init__(self):
 
-        self.baseSearchUrl = '%s/search?q=site:amazon.ca %s currently unavailable&start=%s'
+        self.baseSearchUrl = '%s/search?q=inurl:www.amazon.ca/slp %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         self.detailLinkDao = DetailLinkDao()
+        self.slpLinkDao = SlpLinkDao()
         self.chrome = Chrome()
         # self.chrome.driver.get('https://www.google.com')
 
@@ -31,10 +33,11 @@ class SearchGoogle:
 
     def getDownloadLink(self, keyword, pageNum):
         host = self.myRedis.srandmember(self.googleHost)
-        return self.baseSearchUrl % (host.decode('utf-8'),keyword, pageNum * 10)
+        return self.baseSearchUrl % (host.decode('utf-8'), keyword, pageNum * 10)
 
     def parsePageLink(self, text):
-        pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
+        # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
+        pattern = 'https://www.amazon.ca/slp/([a-zA-Z0-9-]+/?)+'
         pageLinks = re.findall(pattern, text)
         return pageLinks
 
@@ -49,7 +52,7 @@ class SearchGoogle:
         cursor.execute('select google_host from t_ymx_google_host')
         data = cursor.fetchall()
         for row in data:
-            self.myRedis.sadd(self.googleHost,str(row[0]))
+            self.myRedis.sadd(self.googleHost, str(row[0]))
 
     def isLastPage(self, text):
         if 'pnnext' in text:
@@ -65,10 +68,11 @@ class SearchGoogle:
         print('one page link:' + url)
         text = self.download(url)
         pageLinks = self.parsePageLink(text)
-        keyword2link = self.getKeyword2link(keywordId, pageLinks)
+        keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
         self.keywordDao.updateKeywordState(keywordId, 2)
-        self.detailLinkDao.batchInsert(keyword2link)
+        self.slpLinkDao.batchInsert(keyword2slpLink)
         isLastPage = self.isLastPage(text)
+        print('one page isLastPage:' + str(isLastPage))
         pageNum = 1
         while not isLastPage:
             nextPage = self.getDownloadLink(keyword, pageNum)
@@ -76,10 +80,11 @@ class SearchGoogle:
             nextPageLinks = self.parsePageLink(nextPage)
             print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
-            self.detailLinkDao.batchInsert(keywordId2nextPageLink)
+            self.slpLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
             isLastPage = self.isLastPage(text)
-            time.sleep(5)
+            print('next page isLastPage:' + str(isLastPage))
+            time.sleep(10)
             if not isLastPage:
                 pageNum = pageNum + 1
 
@@ -98,6 +103,8 @@ if __name__ == '__main__':
         try:
             id2keyword = keyWordDao.popKeyWordForRedis()
             print(id2keyword)
+
+            print(time.strftime('%Y-%m-%d', time.localtime(time.time())))
             if id2keyword is None:
                 print('no keyword stop 3 second')
                 time.sleep(3)
@@ -110,7 +117,7 @@ if __name__ == '__main__':
                 googleSearch.run(id2keywordDic)
             keyWordDao.close()
             detailLinkDao.close()
-            time.sleep(4)
+            time.sleep(10)
         except:
             keyWordDao.close()
             detailLinkDao.close()
