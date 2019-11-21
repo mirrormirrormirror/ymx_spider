@@ -39,7 +39,10 @@ class SearchGoogle:
         # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
         pattern = 'https://www.amazon.ca/slp/([a-zA-Z0-9-]+/?)+'
         pageLinks = re.findall(pattern, text)
-        return pageLinks
+        result = []
+        for i in pageLinks:
+            result.append('https://www.amazon.ca/slp/' + i)
+        return result
 
     def download(self, url):
         # text = requests.get(url).text
@@ -56,9 +59,9 @@ class SearchGoogle:
 
     def isLastPage(self, text):
         if 'pnnext' in text:
-            return True
-        else:
             return False
+        else:
+            return True
 
     def run(self, keywordId2Keyword):
         keyword = keywordId2Keyword[1]
