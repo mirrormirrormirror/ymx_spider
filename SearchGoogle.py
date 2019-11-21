@@ -133,7 +133,7 @@ if __name__ == '__main__':
                 googleSearch.run(id2keywordDic)
             keyWordDao.close()
             detailLinkDao.close()
-            time.sleep(10)
+            time.sleep(15)
         except:
             keyWordDao.close()
             detailLinkDao.close()
