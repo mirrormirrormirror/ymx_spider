@@ -84,7 +84,7 @@ class SearchGoogle:
         isLastPage = self.isLastPage(text)
         print('one page isLastPage:' + str(isLastPage))
         if not isLastPage:
-            time.sleep(10)
+            time.sleep(20)
         pageNum = 1
         while not isLastPage:
             nextPage = self.getDownloadLink(keyword, pageNum)
@@ -96,7 +96,7 @@ class SearchGoogle:
             self.keywordDao.updateKeywordState(keywordId, 2)
             isLastPage = self.isLastPage(text)
             print('next page isLastPage:' + str(isLastPage))
-            time.sleep(10)
+            time.sleep(20)
             if not isLastPage:
                 pageNum = pageNum + 1
 
