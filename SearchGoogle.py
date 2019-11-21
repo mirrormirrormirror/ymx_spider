@@ -98,6 +98,7 @@ if __name__ == '__main__':
         keyWordDao = KeywordDao()
         try:
             id2keyword = keyWordDao.popKeyWordForRedis()
+            print(id2keyword)
             if id2keyword is None:
                 print('no keyword stop 3 second')
                 time.sleep(3)
