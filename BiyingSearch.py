@@ -31,6 +31,8 @@ class SearchBiying:
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
+        self.driver.set_page_load_timeout(10)
+        self.driver.implicitly_wait(20)
         self.driver.get('https://cn.bing.com/?scope=web&FORM=QBRE')
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
@@ -86,7 +88,7 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
-        print('pageLinks:'+str(pageLinks))
+        print('pageLinks:' + str(pageLinks))
         keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
         self.keywordDao.updateKeywordState(keywordId, 2)
         self.slpLinkDao.batchInsert(keyword2slpLink)
@@ -96,14 +98,13 @@ class SearchBiying:
         while not isLastPage:
             nextPage = self.clikNext()
             nextPageLinks = self.parsePageLink(nextPage)
-            print('nextPageLinks:'+str(nextPageLinks))
+            print('nextPageLinks:' + str(nextPageLinks))
             # print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.slpLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
             isLastPage = self.isLastPage(text)
             print('next page isLastPage:' + str(isLastPage))
-
 
     def close(self):
         self.keywordDao.close()
@@ -116,12 +117,14 @@ class SearchBiying:
         print('sent key')
         self.driver.find_element_by_css_selector(keyword)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
+        time.sleep(7)
         text = self.driver.page_source
         return text
 
     def clikNext(self):
         print('clikNext')
         self.driver.find_element_by_css_selector('li .sw_next').click()
+        time.sleep(7)
         text = self.driver.page_source
         return text
 
@@ -132,29 +135,29 @@ if __name__ == '__main__':
         detailLinkDao = DetailLinkDao()
         keyWordDao = KeywordDao()
         searchBiying = SearchBiying()
-        try:
-            id2keyword = keyWordDao.popKeyWordForRedis()
-            print(id2keyword)
+        # try:
+        id2keyword = keyWordDao.popKeyWordForRedis()
+        print(id2keyword)
 
-            print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
-            if id2keyword is None:
-                print('no keyword stop 3 second')
-                time.sleep(3)
-                continue
-            else:
-                print('go to run keyword')
-                id2keywordDic = eval(id2keyword)
-                print(id2keywordDic)
-                keyWord = id2keywordDic[1]
-                print(keyWord)
-                keywordId = id2keywordDic[0]
-                print(keywordId)
-                searchBiying.run(id2keywordDic)
-            keyWordDao.close()
-            detailLinkDao.close()
-            searchBiying.close()
+        print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
+        if id2keyword is None:
+            print('no keyword stop 3 second')
+            time.sleep(3)
+            continue
+        else:
+            print('go to run keyword')
+            id2keywordDic = eval(id2keyword)
+            print(id2keywordDic)
+            keyWord = id2keywordDic[1]
+            print(keyWord)
+            keywordId = id2keywordDic[0]
+            print(keywordId)
+            searchBiying.run(id2keywordDic)
+        keyWordDao.close()
+        detailLinkDao.close()
+        searchBiying.close()
 
-        except:
-            keyWordDao.close()
-            detailLinkDao.close()
-            searchBiying.close()
+    # except:
+    #     keyWordDao.close()
+    #     detailLinkDao.close()
+    #     searchBiying.close()
