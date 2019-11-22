@@ -20,14 +20,13 @@ class SearchGoogle:
         print('init detailLinkDao finish')
         self.slpLinkDao = SlpLinkDao()
         print('init slpLinkDao finish')
-        self.chrome = Chrome()
-        print('init chrome finish')
-        # self.chrome.driver.get('https://www.google.com')
+
+
+        self.downloadCount = 0
+        self.downloadCountPoint = 0
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
-        print('google init finish')
-        # self.iniHostToRedis()
 
     def getKeyword2link(self, keywordId, allLinks):
         keywordId2link = list()
@@ -52,7 +51,14 @@ class SearchGoogle:
 
     def download(self, url):
         # text = requests.get(url).text
-        text = self.chrome.download(url)
+
+        self.downloadCount = self.downloadCount + 1
+        if self.downloadCount - self.downloadCountPoint > 5:
+            time.sleep(60)
+
+        page = requests.get(url)
+        text = page.text
+        print(page.status_code)
         return text
 
     def iniHostToRedis(self):
@@ -83,8 +89,7 @@ class SearchGoogle:
         self.slpLinkDao.batchInsert(keyword2slpLink)
         isLastPage = self.isLastPage(text)
         print('one page isLastPage:' + str(isLastPage))
-        if not isLastPage:
-            time.sleep(20)
+
         pageNum = 1
         while not isLastPage:
             nextPage = self.getDownloadLink(keyword, pageNum)
@@ -96,7 +101,6 @@ class SearchGoogle:
             self.keywordDao.updateKeywordState(keywordId, 2)
             isLastPage = self.isLastPage(text)
             print('next page isLastPage:' + str(isLastPage))
-            time.sleep(20)
             if not isLastPage:
                 pageNum = pageNum + 1
 
@@ -104,7 +108,7 @@ class SearchGoogle:
         self.keywordDao.close()
         self.detailLinkDao.close()
         self.myRedis.close()
-        self.chrome.close()
+        # self.chrome.close()
 
 
 if __name__ == '__main__':
@@ -133,7 +137,7 @@ if __name__ == '__main__':
                 googleSearch.run(id2keywordDic)
             keyWordDao.close()
             detailLinkDao.close()
-            time.sleep(20)
+
         except:
             keyWordDao.close()
             detailLinkDao.close()
