@@ -37,7 +37,7 @@ class SearchGoogle:
 
     def getDownloadLink(self, keyword, pageNum):
         print('getDownloadLink ----')
-        print(self.baseSearchUrl % ('http://www.google.com', keyword, pageNum * 10))
+        print(self.baseSearchUrl % ('https://www.google.com', keyword, pageNum * 10))
         # print('getDownloadLink----')
         # host = self.myRedis.srandmember(self.googleHost)
         return self.baseSearchUrl % ('http://www.google.com', keyword, pageNum * 10)
