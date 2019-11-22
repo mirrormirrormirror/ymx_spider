@@ -13,7 +13,7 @@ class SearchGoogle:
 
     def __init__(self):
         print('google init')
-        self.baseSearchUrl = '%s/search?q=inurl:www.amazon.ca/slp %s currently unavailable&start=%s'
+        self.baseSearchUrl = '%s/search?sxsrf=ACYBGNRsJBKcA526zgF7BB4Ksghf_KC6-g%3A1574394128417&q=inurl:www.amazon.ca/slp %s currently unavailable&start=%s'
         self.keywordDao = KeywordDao()
         print('init keywordDao finish')
         self.detailLinkDao = DetailLinkDao()
