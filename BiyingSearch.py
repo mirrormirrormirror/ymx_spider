@@ -52,7 +52,6 @@ class SearchBiying:
     def download(self, url):
         page = requests.get(url)
         text = page.text
-        print(text)
 
         print(page.status_code)
         return text
