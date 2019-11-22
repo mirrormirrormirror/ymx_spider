@@ -86,6 +86,7 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
+        print('pageLinks:'+str(pageLinks))
         keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
         self.keywordDao.updateKeywordState(keywordId, 2)
         self.slpLinkDao.batchInsert(keyword2slpLink)
@@ -95,6 +96,7 @@ class SearchBiying:
         while not isLastPage:
             nextPage = self.clikNext()
             nextPageLinks = self.parsePageLink(nextPage)
+            print('nextPageLinks:'+str(nextPageLinks))
             # print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.slpLinkDao.batchInsert(keywordId2nextPageLink)
