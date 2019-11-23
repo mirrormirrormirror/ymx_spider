@@ -1,3 +1,7 @@
+
+import sys
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 import re
 from KeywordDao import KeywordDao
