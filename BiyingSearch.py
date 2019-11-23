@@ -82,7 +82,7 @@ class SearchBiying:
             self.myRedis.sadd(self.googleHost, str(row[0]))
 
     def isLastPage(self, text):
-        if 'sb_pagN sb_pagN_bp b_widePag sb_bp' in text or '404 Charity' not in text:
+        if 'sb_pagN sb_pagN_bp b_widePag sb_bp' in text and '404 Charity' not in text:
             return False
         else:
             return True
@@ -124,9 +124,9 @@ class SearchBiying:
         key = 'site: amazon.ca /slp/ %s currently unavailable' % keyword
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
-        time.sleep(20)
+        time.sleep(30)
         text = self.driver.page_source
-        print(text)
+        # print(text)
         return text
 
     def clikNext(self, nextPage):
