@@ -39,6 +39,8 @@ class SlpLinkDao:
 
     def batchInsert(self, keywordId2slpLink):
         print('keywordId2slpLink:' + str(keywordId2slpLink))
+        if len(keywordId2slpLink) == 0:
+            return
         batchInsertDetailLinkSql = 'INSERT INTO `t_ymx_slp_link` ( `slp_link`,  `keyword_id`) VALUES'
         for row in keywordId2slpLink:
             batchInsertDetailLinkSql = batchInsertDetailLinkSql + ' ("%s",%s)' % (row[0], row[1]) + ','
