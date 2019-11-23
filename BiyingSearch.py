@@ -32,7 +32,7 @@ class SearchBiying:
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
-        # chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless')
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
