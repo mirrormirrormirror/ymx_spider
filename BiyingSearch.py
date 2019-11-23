@@ -27,7 +27,7 @@ class SearchBiying:
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
@@ -115,7 +115,7 @@ class SearchBiying:
 
     def sentKey(self, keyword):
         print('sent key')
-        self.driver.find_element_by_css_selector(keyword)
+        self.driver.find_element_by_css_selector('#sb_form_q').send_keys(keyword)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         time.sleep(7)
         text = self.driver.page_source
