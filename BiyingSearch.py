@@ -140,6 +140,7 @@ class SearchBiying:
         # self.driver.find_element_by_partial_link_text('2').click()
         time.sleep(7)
         text = self.driver.page_source
+        print('next text:'+text)
         return text
 
 
