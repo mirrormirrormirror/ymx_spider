@@ -103,6 +103,9 @@ class SearchBiying:
         while not isLastPage:
 
             nextPage = self.clikNext(nextPage)
+            if nextPage is None:
+                isLastPage = True
+                continue
             nextPageLinks = self.parsePageLink(nextPage)
             print('nextPageLinks:' + str(nextPageLinks))
             # print('next page link:' + str(nextPageLinks))
@@ -132,7 +135,10 @@ class SearchBiying:
     def clikNext(self, nextPage):
 
         nextPageSoup = BeautifulSoup(nextPage)
-        nextPageLink = nextPageSoup.select('#b_results > li.b_pag > nav > ul > li .sb_pagN')[0]['href']
+        try:
+            nextPageLink = nextPageSoup.select('#b_results > li.b_pag > nav > ul > li .sb_pagN')[0]['href']
+        except:
+            return None
         self.driver.get('https://cn.bing.com/' + nextPageLink)
 
         # print('clikNext')
