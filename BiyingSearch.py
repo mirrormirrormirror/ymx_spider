@@ -109,7 +109,7 @@ class SearchBiying:
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.slpLinkDao.batchInsert(keywordId2nextPageLink)
             self.keywordDao.updateKeywordState(keywordId, 2)
-            isLastPage = self.isLastPage(text)
+            isLastPage = self.isLastPage(nextPage)
             print('next page isLastPage:' + str(isLastPage))
 
     def close(self):
