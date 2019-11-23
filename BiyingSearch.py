@@ -1,6 +1,7 @@
-
+from bs4 import BeautifulSoup
 import sys
 import codecs
+
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 import re
@@ -31,7 +32,7 @@ class SearchBiying:
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
@@ -81,7 +82,7 @@ class SearchBiying:
             self.myRedis.sadd(self.googleHost, str(row[0]))
 
     def isLastPage(self, text):
-        if 'sw_next' in text:
+        if 'sb_pagN sb_pagN_bp b_widePag sb_bp' in text or '404 Charity' not in text:
             return False
         else:
             return True
@@ -98,9 +99,10 @@ class SearchBiying:
         self.slpLinkDao.batchInsert(keyword2slpLink)
         isLastPage = self.isLastPage(text)
         print('one page isLastPage:' + str(isLastPage))
-
+        nextPage = text
         while not isLastPage:
-            nextPage = self.clikNext()
+
+            nextPage = self.clikNext(nextPage)
             nextPageLinks = self.parsePageLink(nextPage)
             print('nextPageLinks:' + str(nextPageLinks))
             # print('next page link:' + str(nextPageLinks))
@@ -119,16 +121,23 @@ class SearchBiying:
 
     def sentKey(self, keyword):
         print('sent key')
-        self.driver.find_element_by_css_selector('#sb_form_q').send_keys(keyword)
+        key = 'site: amazon.ca /slp/ %s currently unavailable' % keyword
+        self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
-        time.sleep(10)
+        time.sleep(20)
         text = self.driver.page_source
         print(text)
         return text
 
-    def clikNext(self):
-        print('clikNext')
-        self.driver.find_element_by_css_selector('li .sw_next').click()
+    def clikNext(self, nextPage):
+
+        nextPageSoup = BeautifulSoup(nextPage)
+        nextPageLink = nextPageSoup.select('#b_results > li.b_pag > nav > ul > li .sb_pagN')[0]['href']
+        self.driver.get('https://cn.bing.com/' + nextPageLink)
+
+        # print('clikNext')
+        # # self.driver.find_element_by_css_selector('.sw_next').click()
+        # self.driver.find_element_by_partial_link_text('2').click()
         time.sleep(7)
         text = self.driver.page_source
         return text
