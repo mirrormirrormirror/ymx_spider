@@ -126,7 +126,8 @@ class Detail:
                 commentList = self.getCommentList(asin)
                 lastReviewTime = self.parseLastReviewTime(commentList)
                 isVariant = self.parseIsVariant(commentList)
-            except:
+            except Exception as e:
+                print(e)
                 lastReviewTime = 'January 01, 2030'
                 isVariant = '1'
 
