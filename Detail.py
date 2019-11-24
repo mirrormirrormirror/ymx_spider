@@ -110,7 +110,7 @@ class Detail:
             elif self.isIntercept(page):
                 print('isIntercept skip')
                 detailLinkDao.updateJobStateById(3, detailLinkId)
-                time.sleep(10)
+                time.sleep(10800)
                 return None
             elif not self.isUnavailable(page):
                 print('not Unavailable')
