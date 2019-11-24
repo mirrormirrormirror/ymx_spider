@@ -112,6 +112,9 @@ class Detail:
                 detailLinkDao.updateJobStateById(3, detailLinkId)
                 time.sleep(10)
                 return None
+            elif self.isUnavailable(page):
+                print('not Unavailable')
+                detailLinkDao.updateJobStateById(3, detailLinkId)
 
             reviews = self.parseReviews(page)
             if reviews is None:
@@ -180,6 +183,13 @@ class Detail:
 
     def isIntercept(self, text):
         if 'Enter the characters you see below' in text:
+            return True
+        else:
+            return False
+
+
+    def isUnavailable(self, text):
+        if 'Currently unavailable' in text:
             return True
         else:
             return False
