@@ -83,10 +83,10 @@ if __name__ == '__main__':
                     continue
 
                 detailLinkDao.batchInsert(keywordId2link)
-                slpLinkDao.updateJobStateById(slpId, 2)
+                slpLinkDao.updateJobStateById(2, slpId)
 
-        except:
-            print('search detail fail')
+        except Exception as e:
+            print(e)
         finally:
             print('finally')
             searchDetailLink.close()
