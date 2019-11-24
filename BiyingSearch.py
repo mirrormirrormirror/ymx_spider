@@ -38,7 +38,8 @@ class SearchBiying:
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
         self.driver.set_page_load_timeout(10)
         self.driver.implicitly_wait(20)
-        self.driver.get('https://cn.bing.com/?scope=web&FORM=QBRE')
+        self.driver.get('https://cn.bing.com')
+        print(self.driver.page_source)
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
@@ -180,10 +181,11 @@ if __name__ == '__main__':
                 keywordId = id2keywordDic[0]
                 print(keywordId)
                 searchBiying.run(id2keywordDic)
+        except:
             keyWordDao.close()
             detailLinkDao.close()
             searchBiying.close()
-        except:
+        finally:
             keyWordDao.close()
             detailLinkDao.close()
             searchBiying.close()
