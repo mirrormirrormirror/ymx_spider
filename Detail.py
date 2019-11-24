@@ -112,9 +112,10 @@ class Detail:
                 detailLinkDao.updateJobStateById(3, detailLinkId)
                 time.sleep(10)
                 return None
-            elif self.isUnavailable(page):
+            elif not self.isUnavailable(page):
                 print('not Unavailable')
                 detailLinkDao.updateJobStateById(3, detailLinkId)
+                return None
 
             reviews = self.parseReviews(page)
             if reviews is None:
