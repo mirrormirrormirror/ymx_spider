@@ -16,7 +16,7 @@ class SlpLinkDao:
         self.duplicateLink = 'duplicate_link'
 
     def getKeyWordIdById(self, detailLinkId):
-        getKeyWordIdByIdSql = 'select keyword_id from t_ymx_detail_link where id = %s'
+        getKeyWordIdByIdSql = 'select keyword_id from t_ymx_slp_link where id = %s'
         self.cursor.execute(getKeyWordIdByIdSql % detailLinkId)
         data = self.cursor.fetchall()
         if len(data) == 0:
@@ -24,18 +24,18 @@ class SlpLinkDao:
         else:
             return data[0][0]
 
-    def getKeyword2keywordIdByDetailLinkId(self, detailLinkId):
-        keywordId = self.getKeyWordIdById(detailLinkId)
-        dirDetailLinkDao = DirDetailLinkDao()
-
-        if keywordId is None:
-            keywordId = dirDetailLinkDao.getKeyWordIdById(detailLinkId)
-            dirDetailLinkDao.close()
-
-        keywordDao = KeywordDao()
-        keyword = keywordDao.getKeywordById(keywordId)
-        keywordDao.close()
-        return keyword, keywordId
+    # def getKeyword2keywordIdBySlpLinkId(self, slpLinkId):
+    #     keywordId = self.getKeyWordIdById(slpLinkId)
+    #     dirDetailLinkDao = DirDetailLinkDao()
+    #
+    #     if keywordId is None:
+    #         keywordId = dirDetailLinkDao.getKeyWordIdById(detailLinkId)
+    #         dirDetailLinkDao.close()
+    #
+    #     keywordDao = KeywordDao()
+    #     keyword = keywordDao.getKeywordById(keywordId)
+    #     keywordDao.close()
+    #     return keyword, keywordId
 
     def batchInsert(self, keywordId2slpLink):
         print('keywordId2slpLink:' + str(keywordId2slpLink))
@@ -49,48 +49,49 @@ class SlpLinkDao:
         self.cursor.execute(batchInsertDetailLinkSql)
         self.db.commit()
 
-    def putDetailLinksToRedis(self):
+    def putSlpLinksToRedis(self):
         ids = '-1'
-        batchUpdateDetailLinkJobStateSql = 'update t_ymx_detail_link set job_state=1 where id in (%s)'
-        id2detailLink = self.getId2detailLink()
-        print('id2detailLink:' + str(id2detailLink))
-        for detailLinkId, detailLink in zip(id2detailLink.keys(), id2detailLink.values()):
-            ids = ids + ',' + str(detailLinkId)
-            self.myRedis.sadd(self.seedSlplLink, str((detailLinkId, detailLink)))
+        batchUpdateSlpLinkJobStateSql = 'update t_ymx_slp_link set job_state=1 where id in (%s)'
+        id2slpLink = self.getId2slpLink()
+        print('id2slpLink:' + str(id2slpLink))
+        for slpLinkId, slpLink in zip(id2slpLink.keys(), id2slpLink.values()):
+            ids = ids + ',' + str(slpLinkId)
+            self.myRedis.sadd(self.seedSlplLink, str((slpLinkId, slpLink)))
 
-        print(batchUpdateDetailLinkJobStateSql % ids)
-        self.cursor.execute(batchUpdateDetailLinkJobStateSql % ids)
+        print(batchUpdateSlpLinkJobStateSql % ids)
+        self.cursor.execute(batchUpdateSlpLinkJobStateSql % ids)
         self.db.commit()
 
     def isLowLevelDetailLinksForRedis(self):
-        seedDetailLinkLen = self.myRedis.scard(self.seedSlplLink)
-        print('detail page link len' + str(seedDetailLinkLen))
-        if seedDetailLinkLen < self.limit:
+        seedSlpLinkLen = self.myRedis.scard(self.seedSlplLink)
+        print('slp page link len' + str(seedSlpLinkLen))
+        if seedSlpLinkLen < self.limit:
             return True
         else:
             return False
 
-    def getId2detailLink(self):
-        id2detailLink = {}
-        selectId2detailLinkSql = 'select id,detail_link from t_ymx_detail_link where job_state=0 order by id limit %s'
-        print('selectId2detailLinkSql:' + selectId2detailLinkSql % self.limit)
-        self.cursor.execute(selectId2detailLinkSql % self.limit)
+    def getId2slpLink(self):
+        id2slpLink = {}
+        selectId2slpLinkSql = 'select id,slp_link from t_ymx_slp_link where job_state=0 order by id limit %s'
+        print('selectId2detailLinkSql:' + selectId2slpLinkSql % self.limit)
+        self.cursor.execute(selectId2slpLinkSql % self.limit)
         data = self.cursor.fetchall()
         for row in data:
-            id2detailLink[row[0]] = row[1]
-        return id2detailLink
+            id2slpLink[row[0]] = row[1]
+        return id2slpLink
 
-    def updateJobStateById(self, jobState, detailLinkId):
-        updateJobStateByIdSql = 'update t_ymx_detail_link set job_state=%s where id = %s' % (jobState, detailLinkId)
+    def updateJobStateById(self, jobState, slpLinkId):
+        updateJobStateByIdSql = 'update t_ymx_slp_link set job_state=%s where id = %s' % (jobState, slpLinkId)
+        print(updateJobStateByIdSql)
         self.cursor.execute(updateJobStateByIdSql)
         self.db.commit()
 
-    def popId2detailLinkForRedis(self):
-        id2detailLinkForRedis = self.myRedis.spop(self.seedDetailLink)
-        if id2detailLinkForRedis is None:
+    def popId2slpLinkForRedis(self):
+        id2slpLinkForRedis = self.myRedis.spop(self.seedSlplLink)
+        if id2slpLinkForRedis is None:
             return None
         else:
-            return id2detailLinkForRedis.decode('utf-8')
+            return id2slpLinkForRedis.decode('utf-8')
 
     def close(self):
         self.db.close()

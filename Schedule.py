@@ -3,6 +3,7 @@ from DetailLinkDao import DetailLinkDao
 from KeywordDao import KeywordDao
 from DirDetailLinkDao import DirDetailLinkDao
 import time
+from SlpLinkDao import SlpLinkDao
 
 if __name__ == '__main__':
     while True:
@@ -33,5 +34,13 @@ if __name__ == '__main__':
             dirDetailLinkDao.putDetailLinksToRedis()
         else:
             print('redis seed_dir_detail_link normal')
+        dirDetailLinkDao.close()
 
+
+        slpLinkDao = SlpLinkDao()
+        isLowLevelDetailLinksForRedis = slpLinkDao.isLowLevelDetailLinksForRedis()
+        if isLowLevelDetailLinksForRedis:
+            print('low slp')
+            slpLinkDao.putSlpLinksToRedis()
+        slpLinkDao.close()
         time.sleep(3)

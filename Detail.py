@@ -7,6 +7,7 @@ import time
 from DirDetailLinkDao import DirDetailLinkDao
 from chrome import Chrome
 from Download import Download
+from SlpLinkDao import SlpLinkDao
 
 
 class Detail:
@@ -208,10 +209,11 @@ class Detail:
             detailLinkDao = DetailLinkDao()
             dirDetailLinkDao = DirDetailLinkDao()
 
+
+
+
             # 从redis中获取url
-            id2detailLink = dirDetailLinkDao.popId2detailLinkForRedis()
-            if id2detailLink is None:
-                id2detailLink = detailLinkDao.popId2detailLinkForRedis()
+            id2detailLink = detailLinkDao.popId2detailLinkForRedis()
             if id2detailLink is None:
                 print('not link stop 3 second')
                 time.sleep(3)

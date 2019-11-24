@@ -156,27 +156,32 @@ if __name__ == '__main__':
         detailLinkDao = DetailLinkDao()
         keyWordDao = KeywordDao()
         searchBiying = SearchBiying()
-        # try:
-        id2keyword = keyWordDao.popKeyWordForRedis()
-        print(id2keyword)
-
-        print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
-        if id2keyword is None:
-            print('no keyword stop 3 second')
-            time.sleep(3)
-            continue
-        else:
-            print('go to run keyword')
-            id2keywordDic = eval(id2keyword)
-            print(id2keywordDic)
-            keyWord = id2keywordDic[1]
-            print(keyWord)
-            keywordId = id2keywordDic[0]
-            print(keywordId)
-            searchBiying.run(id2keywordDic)
-        keyWordDao.close()
-        detailLinkDao.close()
-        searchBiying.close()
+        try:
+            # try:
+            id2keyword = keyWordDao.popKeyWordForRedis()
+            print(id2keyword)
+            print(time)
+            print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
+            if id2keyword is None:
+                print('no keyword stop 3 second')
+                time.sleep(3)
+                continue
+            else:
+                print('go to run keyword')
+                id2keywordDic = eval(id2keyword)
+                print(id2keywordDic)
+                keyWord = id2keywordDic[1]
+                print(keyWord)
+                keywordId = id2keywordDic[0]
+                print(keywordId)
+                searchBiying.run(id2keywordDic)
+            keyWordDao.close()
+            detailLinkDao.close()
+            searchBiying.close()
+        except:
+            keyWordDao.close()
+            detailLinkDao.close()
+            searchBiying.close()
 
     # except:
     #     keyWordDao.close()
