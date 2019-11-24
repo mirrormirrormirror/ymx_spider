@@ -25,13 +25,14 @@ class DetailLinkDao:
             return data[0][0]
 
     def getKeyword2keywordIdByDetailLinkId(self, detailLinkId):
+        print('getKeyword2keywordIdByDetailLinkId:'+str(detailLinkId))
         keywordId = self.getKeyWordIdById(detailLinkId)
         dirDetailLinkDao = DirDetailLinkDao()
 
         if keywordId is None:
             keywordId = dirDetailLinkDao.getKeyWordIdById(detailLinkId)
             dirDetailLinkDao.close()
-
+        print(keywordId)
         keywordDao = KeywordDao()
         keyword = keywordDao.getKeywordById(keywordId)
         keywordDao.close()
