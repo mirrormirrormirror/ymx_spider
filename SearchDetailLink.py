@@ -87,10 +87,6 @@ if __name__ == '__main__':
 
         except:
             print('search detail fail')
-            searchDetailLink.close()
-            slpLinkDao.close()
-            detailLinkDao.close()
-            keywordDao.close()
         finally:
             print('finally')
             searchDetailLink.close()
