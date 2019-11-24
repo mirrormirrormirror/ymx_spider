@@ -38,7 +38,7 @@ class SearchBiying:
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
         self.driver.set_page_load_timeout(10)
         self.driver.implicitly_wait(20)
-
+        self.driver.get('https://cn.bing.com/?scope=web&FORM=QBRE')
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
@@ -88,7 +88,7 @@ class SearchBiying:
             return True
 
     def run(self, keywordId2Keyword):
-        self.driver.get('https://cn.bing.com/?scope=web&FORM=QBRE')
+
         print('run---')
         keyword = keywordId2Keyword[1]
         keywordId = keywordId2Keyword[0]
@@ -130,7 +130,7 @@ class SearchBiying:
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         time.sleep(30)
         text = self.driver.page_source
-        # print(text)
+        print('sent key finish')
         return text
 
     def clikNext(self, nextPage):
@@ -156,7 +156,11 @@ if __name__ == '__main__':
     while True:
         detailLinkDao = DetailLinkDao()
         keyWordDao = KeywordDao()
-        searchBiying = SearchBiying()
+        try:
+            searchBiying = SearchBiying()
+        except:
+            print('search init fail')
+            searchBiying.close()
         try:
             # try:
             id2keyword = keyWordDao.popKeyWordForRedis()
