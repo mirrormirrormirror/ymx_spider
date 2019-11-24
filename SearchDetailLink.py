@@ -93,6 +93,7 @@ if __name__ == '__main__':
             slpLinkDao.close()
             detailLinkDao.close()
             keywordDao.close()
+            time.sleep(3)
 
 # searchDetailLink = SearchDetailLink()
 # a = searchDetailLink.run('https://www.amazon.ca/slp/2qxeg8avtgsf67y')
