@@ -111,6 +111,7 @@ class SearchBiying:
                 isLastPage = True
                 continue
             nextPageLinks = self.parsePageLink(nextPage)
+            nextPageLinks = self.slpLinkDao.removalDuplicate(nextPageLinks)
             print('nextPageLinks:' + str(nextPageLinks))
             # print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
