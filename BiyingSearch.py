@@ -95,6 +95,8 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
+        pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
+
         print('pageLinks:' + str(pageLinks))
         keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
         self.keywordDao.updateKeywordState(keywordId, 2)

@@ -91,6 +91,24 @@ class DetailLinkDao:
         else:
             return id2detailLinkForRedis.decode('utf-8')
 
+    def removalDuplicate(self, detailLinks):
+        result = []
+        for link in detailLinks:
+            if not self.isExits(link):
+                result.append(link)
+            else:
+                print('url exists:' + link)
+        return result
+
+    def isExits(self, link):
+        getCountSql = 'select count(*) from t_ymx_detail_link where detail_link = "%s"'
+        self.cursor.execute(getCountSql % link)
+        data = self.cursor.fetchall()
+        if int(data[0][0]) == 0:
+            return False
+        else:
+            return True
+
     def close(self):
         self.db.close()
         self.myRedis.close()

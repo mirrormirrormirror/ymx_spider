@@ -97,6 +97,27 @@ class SlpLinkDao:
         self.db.close()
         self.myRedis.close()
 
+    def removalDuplicate(self, detailLinks):
+        result = []
+        for link in detailLinks:
+            if not self.isExits(link):
+                result.append(link)
+            else:
+                print('url exists:'+link)
+        return result
+
+
+
+    def isExits(self, link):
+        getCountSql = 'select count(*) from t_ymx_slp_link where slp_link = "%s"'
+        self.cursor.execute(getCountSql % link)
+        data = self.cursor.fetchall()
+        if int(data[0][0]) == 0:
+            return False
+        else:
+            return True
+
+
 
 if __name__ == '__main__':
     pass

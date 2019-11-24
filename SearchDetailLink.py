@@ -69,6 +69,8 @@ if __name__ == '__main__':
                 slpId = id2slpDic[0]
                 detailLinks = searchDetailLink.run(slpLink)
 
+                detailLinks = detailLinkDao.removalDuplicate(detailLinks)
+
                 keywordId = slpLinkDao.getKeyWordIdById(slpId)
                 keywordId2link = list()
                 print('keyworId:' + str(keywordId))
@@ -79,7 +81,7 @@ if __name__ == '__main__':
                 print('keywordId2link:' + str(keywordId2link))
                 if len(detailLinks) == 0:
                     print('no detail link----skip')
-                    slpLinkDao.updateJobStateById(slpId, 2)
+                    slpLinkDao.updateJobStateById(2, slpId)
                     continue
 
                 detailLinkDao.batchInsert(keywordId2link)
