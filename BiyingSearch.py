@@ -180,10 +180,8 @@ if __name__ == '__main__':
                 keywordId = id2keywordDic[0]
                 print(keywordId)
                 searchBiying.run(id2keywordDic)
-        except:
-            keyWordDao.close()
-            detailLinkDao.close()
-            searchBiying.close()
+        except Exception as e:
+            print(e)
         finally:
             keyWordDao.close()
             detailLinkDao.close()
