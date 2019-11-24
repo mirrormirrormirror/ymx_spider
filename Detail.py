@@ -68,11 +68,11 @@ class Detail:
             return '0'
 
     def getCommentList(self, asin):
-        # postUrl = 'https://www.amazon.com/hz/reviews-render/ajax/medley-filtered-reviews/get/ref=cm_cr_dp_d_fltrs_srt'
-        getUrl = 'https://www.amazon.ca/hz/reviews-render/ajax/medley-filtered-reviews/get/ref=cm_cr_dp_d_fltrs_srt'
+        postUrl = 'https://www.amazon.ca/hz/reviews-render/ajax/medley-filtered-reviews/get/ref=cm_cr_dp_d_fltrs_srt'
+        # getUrl = 'https://www.amazon.ca/hz/reviews-render/ajax/medley-filtered-reviews/get/ref=cm_cr_dp_d_fltrs_srt'
         postPara = {'asin': asin, 'sortBy': 'helpful', 'scope': 'reviewsAjax2'}
 
-        commentList = requests.get(getUrl, data=postPara, timeout=5)
+        commentList = requests.post(postUrl, data=postPara, timeout=5)
         return commentList.text
 
     def parseTitle(self, page):
