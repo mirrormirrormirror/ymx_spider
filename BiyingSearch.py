@@ -119,7 +119,6 @@ class SearchBiying:
 
     def close(self):
         self.keywordDao.close()
-        self.detailLinkDao.close()
         self.myRedis.close()
         self.driver.close()
         self.driver.quit()
@@ -190,7 +189,4 @@ if __name__ == '__main__':
             detailLinkDao.close()
             searchBiying.close()
 
-    # except:
-    #     keyWordDao.close()
-    #     detailLinkDao.close()
-    #     searchBiying.close()
+
