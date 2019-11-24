@@ -36,10 +36,10 @@ class SearchBiying:
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
-        self.driver.set_page_load_timeout(10)
-        self.driver.implicitly_wait(20)
+        # self.driver.set_page_load_timeout(10)
+        # self.driver.implicitly_wait(20)
         self.driver.get('https://cn.bing.com')
-        print(self.driver.page_source)
+        # print(self.driver.page_source)
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
         self.googleHost = 'google_host'
@@ -128,9 +128,11 @@ class SearchBiying:
         key = 'site: amazon.ca /slp/ %s currently unavailable' % keyword
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
+        print('sent key finish')
         time.sleep(30)
         text = self.driver.page_source
-        print('sent key finish')
+        print('page_source finish')
+
         return text
 
     def clikNext(self, nextPage):
@@ -183,8 +185,7 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
         finally:
-            keyWordDao.close()
-            detailLinkDao.close()
+
             searchBiying.close()
 
 
