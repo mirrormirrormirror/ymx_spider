@@ -204,14 +204,10 @@ class Detail:
         # self.download.close()
         self.chrome.close()
 
+
     def run(self):
         while True:
             detailLinkDao = DetailLinkDao()
-            dirDetailLinkDao = DirDetailLinkDao()
-
-
-
-
             # 从redis中获取url
             id2detailLink = detailLinkDao.popId2detailLinkForRedis()
             if id2detailLink is None:
@@ -246,9 +242,14 @@ class Detail:
 
 if __name__ == '__main__':
     while True:
-        detail = Detail()
-        detail.run()
-        detail.close()
+        try:
+            detail = Detail()
+            detail.run()
+
+        except:
+            print('detail fail:')
+        finally:
+            detail.close()
 
     # dateStr = 'April 5, 2019'
     # url = 'http://www.baidu.com/link?url=W030YCfQnj265IjnUV5UGGYPxT2TVAX5zGsKzVSXw9A_afUXjv0GiqnVmpDQJHu3JyutO7nV2pnzn-F8S-p_FPBS97P7eGMSx__cDOTUJwHLvotAbEM8p_4uoNYF7e9uaGWS2sC1N04HEJ0Yzd5pqa'
