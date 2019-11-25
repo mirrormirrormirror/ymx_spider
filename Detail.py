@@ -110,6 +110,7 @@ class Detail:
             elif self.isIntercept(page):
                 print('isIntercept skip')
                 print("sleep 30 fenzhong")
+                detailLinkDao.updateJobStateById(5, detailLinkId)
                 time.sleep(1800)
                 return None
                 # detailLinkDao.updateJobStateById(3, detailLinkId)
