@@ -103,7 +103,7 @@ class Detail:
 
         else:
             detailLinkDao = DetailLinkDao()
-            if 'www.amazon.ca' not in page:
+            if 'www.amazon.ca' not in url:
                 print('not www.amazon.ca skip')
                 detailLinkDao.updateJobStateById(-1, detailLinkId)
                 return None
