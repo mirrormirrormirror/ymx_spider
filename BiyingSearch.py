@@ -38,7 +38,7 @@ class SearchBiying:
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
         # self.driver.set_page_load_timeout(10)
         # self.driver.implicitly_wait(20)
-        self.driver.get('https://cn.bing.com')
+        self.driver.get('https://cn.bing.com/?mkt=zh-CN')
         # print(self.driver.page_source)
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
@@ -132,9 +132,9 @@ class SearchBiying:
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         print('sent key finish')
-        time.sleep(4)
-        self.driver.find_element_by_css_selector('#est_cn').click()
-        time.sleep(4)
+        time.sleep(6)
+        # self.driver.find_element_by_css_selector('#est_cn').click()
+        # time.sleep(5)
         text = self.driver.page_source
         print('page_source finish')
 
