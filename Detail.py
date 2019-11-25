@@ -109,11 +109,16 @@ class Detail:
                 return None
             elif self.isIntercept(page):
                 print('isIntercept skip')
+                print("sleep 30 fenzhong")
+                time.sleep(1800)
+                return None
                 # detailLinkDao.updateJobStateById(3, detailLinkId)
-                page = self.inputVertify(page)
-                while self.isIntercept(page):
-                    page = self.inputVertify(page)
-                    time.sleep(3)
+                # page = self.inputVertify(page)
+                # while self.isIntercept(page):
+                #     page = self.inputVertify(page)
+                #     print("sleep 30 fenzhong")
+                #     time.sleep(1800)
+                #     return None
                 # return None
             elif not self.isUnavailable(page):
                 print('not Unavailable')
@@ -224,6 +229,7 @@ class Detail:
 
     def run(self):
         while True:
+            print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
             detailLinkDao = DetailLinkDao()
             # 从redis中获取url
             id2detailLink = detailLinkDao.popId2detailLinkForRedis()

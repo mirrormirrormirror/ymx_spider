@@ -18,7 +18,7 @@ class SearchBiying:
 
     def __init__(self):
         # print('google init')
-        # self.baseSearchUrl = 'https://cn.bing.com/search?q=site: amazon.com /slp/ %s currently unavailable&go=Search&qs=ds&first=%s&FORM=PERE2'
+        self.baseSearchUrl = 'https://cn.bing.com/search?q=site: amazon.com /slp/ %s currently unavailable&go=Search&qs=ds&first=%s&FORM=PERE2'
         self.keywordDao = KeywordDao()
         print('init keywordDao finish')
         self.detailLinkDao = DetailLinkDao()
@@ -198,7 +198,9 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
         finally:
-
-            searchBiying.close()
+            try:
+                searchBiying.close()
+            except:
+                print("searchBiying.close() fail")
 
 
