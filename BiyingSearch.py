@@ -132,7 +132,7 @@ class SearchBiying:
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         print('sent key finish')
-        time.sleep(15)
+        time.sleep(6)
         text = self.driver.page_source
         print('page_source finish')
 
