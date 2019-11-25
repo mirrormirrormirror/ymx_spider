@@ -32,6 +32,11 @@ class SearchBiying:
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
+
+        chrome_options.add_argument(
+            'user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"')
+
+
         chrome_options.add_argument('--headless')
         # chrome_options.add_argument('--proxy-server=%s' % 'https://127.0.0.1:8388')
         # chrome_options.add_argument('--headless')
@@ -131,6 +136,7 @@ class SearchBiying:
     def sentKey(self, keyword):
         print('sent key')
         key = 'site: amazon.ca /slp/ %s currently unavailable' % keyword
+        print(key)
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         print('sent key finish')
