@@ -39,6 +39,7 @@ class SearchBiying:
         # self.driver.set_page_load_timeout(10)
         # self.driver.implicitly_wait(20)
         self.driver.get('https://cn.bing.com/?mkt=zh-CN')
+        print(self.driver.page_source)
         # print(self.driver.page_source)
 
         self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
