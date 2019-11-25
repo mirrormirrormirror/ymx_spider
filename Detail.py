@@ -111,8 +111,9 @@ class Detail:
                 print('isIntercept skip')
                 # detailLinkDao.updateJobStateById(3, detailLinkId)
                 page = self.inputVertify(page)
-                while self.inputVertify(page):
+                while self.isIntercept(page):
                     page = self.inputVertify(page)
+                    time.sleep(3)
                 # return None
             elif not self.isUnavailable(page):
                 print('not Unavailable')
@@ -257,6 +258,7 @@ class Detail:
 
     def inputVertify(self,text):
         soup = BeautifulSoup(text)
+        print(text)
         imageUrl = soup.select('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-row.a-spacing-large > div > div > div.a-row.a-text-center > img')['src']
         print('imageUrl:'+imageUrl)
         vertifyKeyword = input('input vertify keyword:')
