@@ -109,12 +109,14 @@ class Detail:
                 return None
             elif self.isIntercept(page):
                 print('isIntercept skip')
-                detailLinkDao.updateJobStateById(3, detailLinkId)
-                time.sleep(10800)
-                return None
+                # detailLinkDao.updateJobStateById(3, detailLinkId)
+                page = self.inputVertify(page)
+                while self.inputVertify(page):
+                    page = self.inputVertify(page)
+                # return None
             elif not self.isUnavailable(page):
                 print('not Unavailable')
-                detailLinkDao.updateJobStateById(3, detailLinkId)
+                detailLinkDao.updateJobStateById(4, detailLinkId)
                 return None
 
             reviews = self.parseReviews(page)
@@ -253,6 +255,15 @@ class Detail:
             detailLinkDao.close()
             time.sleep(1)
 
+    def inputVertify(self,text):
+        soup = BeautifulSoup(text)
+        imageUrl = soup.select('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-row.a-spacing-large > div > div > div.a-row.a-text-center > img')['src']
+        print('imageUrl:'+imageUrl)
+        vertifyKeyword = input('input vertify keyword:')
+        self.chrome.driver.find_element_by_css_selector('#captchacharacters').send_keys(vertifyKeyword)
+        self.chrome.driver.find_element_by_css_selector('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-section.a-spacing-extra-large > div > span > span > button').click()
+        time.sleep(10)
+        return self.chrome.driver.page_source
 
 if __name__ == '__main__':
     while True:
