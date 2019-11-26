@@ -117,7 +117,7 @@ class Detail:
                 page = self.inputVertify(page)
                 isIntercept = self.isIntercept(page)
                 print('isIntercept:'+str(isIntercept))
-                while not isIntercept:
+                while isIntercept:
                     page = self.inputVertify(page)
                     page = self.isIntercept(page)
                     print('isIntercept:' + str(isIntercept))
