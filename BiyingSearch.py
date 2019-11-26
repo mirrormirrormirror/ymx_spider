@@ -26,6 +26,8 @@ class SearchBiying:
         self.slpLinkDao = SlpLinkDao()
         print('init slpLinkDao finish')
 
+        self.exitsPageCount = 0
+
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('window-size=1920x3000')
@@ -103,6 +105,10 @@ class SearchBiying:
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
         pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
+        if len(pageLinks) == 0:
+            print('Duplicate page')
+            self.exitsPageCount = self.exitsPageCount + 1
+
 
         print('pageLinks:' + str(pageLinks))
         keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
@@ -112,6 +118,9 @@ class SearchBiying:
         print('one page isLastPage:' + str(isLastPage))
         nextPage = text
         while not isLastPage:
+            if self.exitsPageCount > 2:
+                print('Duplicate keyword skip--')
+                break
 
             nextPage = self.clikNext(nextPage)
             if nextPage is None:
@@ -120,6 +129,11 @@ class SearchBiying:
             nextPageLinks = self.parsePageLink(nextPage)
             nextPageLinks = self.slpLinkDao.removalDuplicate(nextPageLinks)
             print('nextPageLinks:' + str(nextPageLinks))
+
+            if len(nextPageLinks) == 0:
+                print('Duplicate page next')
+                self.exitsPageCount = self.exitsPageCount + 1
+
             # print('next page link:' + str(nextPageLinks))
             keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
             self.slpLinkDao.batchInsert(keywordId2nextPageLink)
