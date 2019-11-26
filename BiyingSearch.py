@@ -154,7 +154,7 @@ class SearchBiying:
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
         print('sent key finish')
-        time.sleep(5)
+        time.sleep(3)
         # self.driver.find_element_by_css_selector('#est_cn').click()
         # time.sleep(5)
         text = self.driver.page_source
@@ -174,7 +174,7 @@ class SearchBiying:
         # print('clikNext')
         # # self.driver.find_element_by_css_selector('.sw_next').click()
         # self.driver.find_element_by_partial_link_text('2').click()
-        time.sleep(7)
+        time.sleep(3)
         text = self.driver.page_source
         # print('next text:'+text)
         return text
