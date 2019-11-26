@@ -7,10 +7,10 @@ from DirDetailLinkDao import DirDetailLinkDao
 class DetailLinkDao:
 
     def __init__(self):
-        self.db = pymysql.connect(host='localhost', user='root', password='mirror123', database='ymx')
+        self.db = pymysql.connect(host='170.106.3.150', user='root', password='mirror123', database='ymx')
         self.cursor = self.db.cursor()
 
-        self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
+        self.myRedis = redis.Redis(host='170.106.3.150', port=6379, db=0)
         self.limit = 10
         self.seedDetailLink = 'seed_detail_link'
         self.duplicateLink = 'duplicate_link'

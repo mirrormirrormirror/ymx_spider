@@ -25,7 +25,7 @@ class SearchGoogle:
         self.downloadCount = 0
         self.downloadCountPoint = 0
 
-        self.myRedis = redis.Redis(host='localhost', port=6379, db=0)
+        self.myRedis = redis.Redis(host='170.106.3.150', port=6379, db=0)
         self.googleHost = 'google_host'
 
     def getKeyword2link(self, keywordId, allLinks):
@@ -63,7 +63,7 @@ class SearchGoogle:
         return text
 
     def iniHostToRedis(self):
-        db = pymysql.connect(host='localhost', user='root', password='mirror123', database='ymx')
+        db = pymysql.connect(host='170.106.3.150', user='root', password='mirror123', database='ymx')
         cursor = db.cursor()
         cursor.execute('select google_host from t_ymx_google_host')
         data = cursor.fetchall()

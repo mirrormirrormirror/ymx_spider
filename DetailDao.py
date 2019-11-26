@@ -3,7 +3,7 @@ import pymysql
 
 class DetailDao:
     def __init__(self):
-        self.db = pymysql.connect(host='localhost', user='root', password='mirror123', database='ymx')
+        self.db = pymysql.connect(host='170.106.3.150', user='root', password='mirror123', database='ymx')
         self.cursor = self.db.cursor()
 
     def insert(self, asin, stars, reviews, last_review_time, title, brand, keyword, keyword_id, detail_link,

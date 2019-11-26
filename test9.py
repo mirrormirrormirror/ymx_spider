@@ -1,5 +1,9 @@
 import requests
 import time
-# proxies = { "http": "http://170.106.3.150:8388", "https": "https://170.106.3.150:8388", }
-# page = requests.get('https://cn.bing.com/search?q=%E7%88%AC%E8%99%AB&qs=n&FORM=BESBTB&sp=-1&pq=%E7%88%AC%E8%99%AB&sc=0-2')
-# print(page.text)
+username = 'r742953129'
+password = 'VNjn5uUJUV'
+entry = ('http://customer-%s:%s@tr-pr.oxylabs.io:30001' %
+    (username, password))
+proxies = { "http": entry[0], "https": entry[0]}
+page = requests.get('https://www.amazon.ca/dp/B07FLHJNQ1')
+print(page.text)
