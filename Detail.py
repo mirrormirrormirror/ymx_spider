@@ -258,12 +258,12 @@ class Detail:
             detailDao = DetailDao()
             keyword2keywordId = detailLinkDao.getKeyword2keywordIdByDetailLinkId(detailLinkId)
 
-            detailDao.insert(detailData['asin'], float(detailData['stars']), int(detailData['reviews']),
-                             detailData['lastReviewTime'], detailData['title'], detailData['brand'],
-                             keyword2keywordId[0],
-                             keyword2keywordId[1], detailLink, detailLinkId,
-                             int(detailData['isVariant']))
-            detailLinkDao.updateJobStateById(2, detailLinkId)
+            # detailDao.insert(detailData['asin'], float(detailData['stars']), int(detailData['reviews']),
+            #                  detailData['lastReviewTime'], detailData['title'], detailData['brand'],
+            #                  keyword2keywordId[0],
+            #                  keyword2keywordId[1], detailLink, detailLinkId,
+            #                  int(detailData['isVariant']))
+            # detailLinkDao.updateJobStateById(2, detailLinkId)
             detailLinkDao.close()
             time.sleep(1)
 
