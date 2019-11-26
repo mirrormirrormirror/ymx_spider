@@ -268,7 +268,7 @@ class Detail:
     def inputVertify(self,text):
         soup = BeautifulSoup(text)
         print(text)
-        imageUrl = soup.select('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-row.a-spacing-large > div > div > div.a-row.a-text-center > img')['src']
+        imageUrl = soup.select('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-row.a-spacing-large > div > div > div.a-row.a-text-center > img')[0]['src']
         print('imageUrl:'+imageUrl)
         vertifyKeyword = input('input vertify keyword:')
         self.chrome.driver.find_element_by_css_selector('#captchacharacters').send_keys(vertifyKeyword)
