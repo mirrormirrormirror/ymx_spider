@@ -116,9 +116,11 @@ class Detail:
                 # detailLinkDao.updateJobStateById(3, detailLinkId)
                 page = self.inputVertify(page)
                 isIntercept = self.isIntercept(page)
+                print('isIntercept:'+str(isIntercept))
                 while not isIntercept:
                     page = self.inputVertify(page)
                     page = self.isIntercept(page)
+                    print('isIntercept:' + str(isIntercept))
                     print("sleep 5 second")
                     time.sleep(5)
 
@@ -273,7 +275,8 @@ class Detail:
         vertifyKeyword = input('input vertify keyword:')
         self.chrome.driver.find_element_by_css_selector('#captchacharacters').send_keys(vertifyKeyword)
         self.chrome.driver.find_element_by_css_selector('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-section.a-spacing-extra-large > div > span > span > button').click()
-        time.sleep(10)
+        print('click finish')
+        time.sleep(5)
         return self.chrome.driver.page_source
 
 if __name__ == '__main__':
