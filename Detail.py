@@ -282,8 +282,8 @@ if __name__ == '__main__':
             detail = Detail()
             detail.run()
 
-        except:
-            print('detail fail:')
+        except Exception as e:
+            print(e)
         finally:
             detail.close()
             time.sleep(2)
