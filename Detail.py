@@ -108,18 +108,20 @@ class Detail:
                 detailLinkDao.updateJobStateById(-1, detailLinkId)
                 return None
             elif self.isIntercept(page):
-                print('isIntercept skip')
-                print("sleep 30 fenzhong")
-                detailLinkDao.updateJobStateById(5, detailLinkId)
-                time.sleep(1800)
-                return None
+                # print('isIntercept skip')
+                # print("sleep 30 fenzhong")
+                # detailLinkDao.updateJobStateById(5, detailLinkId)
+                # time.sleep(1800)
+                # return None
                 # detailLinkDao.updateJobStateById(3, detailLinkId)
-                # page = self.inputVertify(page)
-                # while self.isIntercept(page):
-                #     page = self.inputVertify(page)
-                #     print("sleep 30 fenzhong")
-                #     time.sleep(1800)
-                #     return None
+                page = self.inputVertify(page)
+                isIntercept = self.isIntercept(page)
+                while not isIntercept:
+                    page = self.inputVertify(page)
+                    page = self.isIntercept(page)
+                    print("sleep 5 second")
+                    time.sleep(5)
+
                 # return None
             elif not self.isUnavailable(page):
                 print('not Unavailable')
