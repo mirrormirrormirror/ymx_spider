@@ -4,7 +4,7 @@ import redis
 class KeywordDao:
 
     def __init__(self):
-        self.db = pymysql.connect(host='170.106.3.150', user='root', password='aa123', database='ymx')
+        self.db = pymysql.connect(host='170.106.3.150', user='root', password='mirror123', database='ymx')
         self.cursor = self.db.cursor()
 
         self.myRedis = redis.Redis(host='170.106.3.150', port=6379, db=0)

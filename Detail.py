@@ -251,19 +251,19 @@ class Detail:
             if '/dp/' not in detailLink:
                 continue
             detailData = self.crawl(detailLink, detailLinkId)
-            # if detailData is None:
-            #     print('fail:' + id2detailLink)
-            #     continue
-            #
-            # detailDao = DetailDao()
-            # keyword2keywordId = detailLinkDao.getKeyword2keywordIdByDetailLinkId(detailLinkId)
+            if detailData is None:
+                print('fail:' + id2detailLink)
+                continue
 
-            # detailDao.insert(detailData['asin'], float(detailData['stars']), int(detailData['reviews']),
-            #                  detailData['lastReviewTime'], detailData['title'], detailData['brand'],
-            #                  keyword2keywordId[0],
-            #                  keyword2keywordId[1], detailLink, detailLinkId,
-            #                  int(detailData['isVariant']))
-            # detailLinkDao.updateJobStateById(2, detailLinkId)
+            detailDao = DetailDao()
+            keyword2keywordId = detailLinkDao.getKeyword2keywordIdByDetailLinkId(detailLinkId)
+
+            detailDao.insert(detailData['asin'], float(detailData['stars']), int(detailData['reviews']),
+                             detailData['lastReviewTime'], detailData['title'], detailData['brand'],
+                             keyword2keywordId[0],
+                             keyword2keywordId[1], detailLink, detailLinkId,
+                             int(detailData['isVariant']))
+            detailLinkDao.updateJobStateById(2, detailLinkId)
             detailLinkDao.close()
             time.sleep(1)
 
