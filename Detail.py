@@ -14,6 +14,7 @@ from Predict import FateadmApi
 class Detail:
     def __init__(self):
         self.chrome = Chrome()
+        self.crawlCount = 0
         # self.download = Download()
 
     def parseReviews(self, text):
@@ -236,6 +237,9 @@ class Detail:
     def run(self):
         while True:
             print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
+            if self.crawlCount > 200:
+                print('crawlCount 200 -> restart')
+                break
             detailLinkDao = DetailLinkDao()
             # 从redis中获取url
             id2detailLink = detailLinkDao.popId2detailLinkForRedis()
@@ -301,8 +305,11 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
         finally:
-            detail.close()
-            time.sleep(2)
+            try:
+                detail.close()
+                time.sleep(2)
+            except Exception as e:
+                print(e)
 
     # dateStr = 'April 5, 2019'
     # url = 'http://www.baidu.com/link?url=W030YCfQnj265IjnUV5UGGYPxT2TVAX5zGsKzVSXw9A_afUXjv0GiqnVmpDQJHu3JyutO7nV2pnzn-F8S-p_FPBS97P7eGMSx__cDOTUJwHLvotAbEM8p_4uoNYF7e9uaGWS2sC1N04HEJ0Yzd5pqa'
