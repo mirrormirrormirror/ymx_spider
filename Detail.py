@@ -8,6 +8,7 @@ from DirDetailLinkDao import DirDetailLinkDao
 from chrome import Chrome
 from Download import Download
 from SlpLinkDao import SlpLinkDao
+from Predict import FateadmApi
 
 
 class Detail:
@@ -269,11 +270,23 @@ class Detail:
 
     def inputVertify(self,text):
         soup = BeautifulSoup(text)
-        # print(text)
         imageUrl = soup.select('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-row.a-spacing-large > div > div > div.a-row.a-text-center > img')[0]['src']
         print('imageUrl:'+imageUrl)
-        vertifyKeyword = input('input vertify keyword:')
-        self.chrome.driver.find_element_by_css_selector('#captchacharacters').send_keys(vertifyKeyword)
+        img = requests.get(imageUrl)
+        date = time.time()
+        filePath = 'image/'+str(date)+'.jpg'
+        with open(filePath, 'ab') as f:
+            f.write(img.content)
+            f.close()
+        pdId = "118622"  # 用户中心页可以查询到pd信息
+        pdKey = "6M2/ETCHJPn6DRrRbtxnPSPhJ5GmsjTN"
+        appId = "318622"  # 开发者分成用的账号，在开发者中心可以查询到
+        appKey = "pFMjNEQzbq2JW334cgpxqLNxRaWDda12"
+        predType = "20600"
+        api = FateadmApi(appId, appKey, pdId, pdKey)
+        result = api.PredictFromFileExtend(predType, filePath)
+        print('predict:'+result)
+        self.chrome.driver.find_element_by_css_selector('#captchacharacters').send_keys(result)
         self.chrome.driver.find_element_by_css_selector('body > div > div.a-row.a-spacing-double-large > div.a-section > div > div > form > div.a-section.a-spacing-extra-large > div > span > span > button').click()
         print('click finish')
         time.sleep(5)
