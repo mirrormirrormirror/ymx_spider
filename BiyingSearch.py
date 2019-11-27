@@ -188,8 +188,11 @@ if __name__ == '__main__':
         try:
             searchBiying = SearchBiying()
         except:
-            print('search init fail')
-            searchBiying.close()
+            try:
+                print('search init fail')
+                searchBiying.close()
+            except:
+                print('search close fail')
         try:
             # try:
             id2keyword = keyWordDao.popKeyWordForRedis()
