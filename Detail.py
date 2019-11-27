@@ -237,6 +237,7 @@ class Detail:
     def run(self):
         while True:
             print(time.strftime(' %Y-%m-%d %H:%M:%S %p %w ', time.localtime(time.time())))
+            self.crawlCount = self.crawlCount + 1
             if self.crawlCount > 200:
                 print('crawlCount 200 -> restart')
                 break
