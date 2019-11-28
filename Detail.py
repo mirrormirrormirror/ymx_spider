@@ -9,7 +9,10 @@ from chrome import Chrome
 from Download import Download
 from SlpLinkDao import SlpLinkDao
 from Predict import FateadmApi
+import sys
+import codecs
 
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 class Detail:
     def __init__(self):

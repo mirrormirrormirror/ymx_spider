@@ -1,3 +1,7 @@
+import sys
+import codecs
+
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 from DetailLinkDao import DetailLinkDao
 from SlpLinkDao import SlpLinkDao
