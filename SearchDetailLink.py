@@ -95,11 +95,15 @@ if __name__ == '__main__':
             print(e)
         finally:
             print('finally')
-            searchDetailLink.close()
-            slpLinkDao.close()
-            detailLinkDao.close()
-            keywordDao.close()
-            time.sleep(1)
+            try:
+                searchDetailLink.close()
+                slpLinkDao.close()
+                detailLinkDao.close()
+                keywordDao.close()
+                time.sleep(1)
+            except:
+                print('finally fail')
+                time.sleep(1)
 
 # searchDetailLink = SearchDetailLink()
 # a = searchDetailLink.run('https://www.amazon.ca/slp/2qxeg8avtgsf67y')

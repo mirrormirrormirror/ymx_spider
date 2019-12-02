@@ -149,7 +149,7 @@ class SearchBiying:
 
     def sentKey(self, keyword):
         print('sent key')
-        key = 'site: amazon.ca /slp/ %s currently unavailable' % keyword
+        key = 'currently unavailable %s /slp/ site:www.amazon.com' % keyword
         print(key)
         self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
         self.driver.find_element_by_css_selector('#sb_form_go').click()
