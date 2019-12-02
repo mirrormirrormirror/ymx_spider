@@ -67,11 +67,11 @@
       <file leaf-file-name="BiyingSearch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BiyingSearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="106" column="33" lean-forward="true" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+            <state relative-caret-position="465">
+              <caret line="161" column="18" lean-forward="false" selection-start-line="161" selection-start-column="18" selection-end-line="161" selection-end-column="18" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1575297877214" expanded="true" signature="3221:3262" ph="select googl... t_ymx_google_host" />
+                <marker date="1575298016520" expanded="true" signature="3221:3262" ph="select googl... t_ymx_google_host" />
               </folding>
             </state>
           </provider>
@@ -450,13 +450,6 @@
       <option name="presentableId" value="Default" />
       <updated>1573284287413</updated>
     </task>
-    <task id="LOCAL-00014" summary="DB">
-      <created>1574129613017</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1574129613017</updated>
-    </task>
     <task id="LOCAL-00015" summary="DB">
       <created>1574130188427</created>
       <option name="number" value="00015" />
@@ -793,7 +786,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575297435368</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="改变搜索策略+try">
+      <created>1575297884816</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1575297884816</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1233,11 +1233,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BiyingSearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="106" column="33" lean-forward="true" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+        <state relative-caret-position="465">
+          <caret line="161" column="18" lean-forward="false" selection-start-line="161" selection-start-column="18" selection-end-line="161" selection-end-column="18" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1575297877214" expanded="true" signature="3221:3262" ph="select googl... t_ymx_google_host" />
+            <marker date="1575298016520" expanded="true" signature="3221:3262" ph="select googl... t_ymx_google_host" />
           </folding>
         </state>
       </provider>

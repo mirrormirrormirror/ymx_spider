@@ -159,6 +159,7 @@ class SearchBiying:
         # self.driver.find_element_by_css_selector('#est_cn').click()
         # time.sleep(5)
         text = self.driver.page_source
+        print(text)
         print('page_source finish')
 
         return text
