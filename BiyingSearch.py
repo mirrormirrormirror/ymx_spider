@@ -104,6 +104,7 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
+        print("page link before")
         pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
         if len(pageLinks) == 0:
             print('Duplicate page')
