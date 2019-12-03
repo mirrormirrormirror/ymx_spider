@@ -76,6 +76,16 @@ class SearchBiying:
             result.add('https://www.amazon.ca/slp/' + i)
         return result
 
+    def parsePageLinkCom(self, text):
+        # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
+        pattern = 'https://www.amazon.com/slp/([a-zA-Z0-9-]+/?)+'
+        pageLinks = re.findall(pattern, text)
+        print('page link:'+str(pageLinks))
+        result = set()
+        for i in pageLinks:
+            result.add('https://www.amazon.ca/slp/' + i)
+        return result
+
     def download(self, url):
         page = requests.get(url)
         text = page.text
@@ -142,6 +152,52 @@ class SearchBiying:
             isLastPage = self.isLastPage(nextPage)
             print('next page isLastPage:' + str(isLastPage))
 
+
+    def runCom(self, keywordId2Keyword):
+
+        print('runCom--')
+        keyword = keywordId2Keyword[1]
+        keywordId = keywordId2Keyword[0]
+        text = self.sentKeyCom(keyword)
+        pageLinks = self.parsePageLinkCom(text)
+        print("page link before")
+        pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
+        if len(pageLinks) == 0:
+            print('Duplicate page')
+            self.exitsPageCount = self.exitsPageCount + 1
+
+
+        print('pageLinks:' + str(pageLinks))
+        keyword2slpLink = self.getKeyword2link(keywordId, pageLinks)
+        self.keywordDao.updateKeywordState(keywordId, 2)
+        self.slpLinkDao.batchInsert(keyword2slpLink)
+        isLastPage = self.isLastPage(text)
+        print('one page isLastPage:' + str(isLastPage))
+        nextPage = text
+        while not isLastPage:
+            if self.exitsPageCount > 2:
+                print('Duplicate keyword skip--')
+                break
+
+            nextPage = self.clikNext(nextPage)
+            if nextPage is None:
+                isLastPage = True
+                continue
+            nextPageLinks = self.parsePageLink(nextPage)
+            nextPageLinks = self.slpLinkDao.removalDuplicate(nextPageLinks)
+            print('nextPageLinks:' + str(nextPageLinks))
+
+            if len(nextPageLinks) == 0:
+                print('Duplicate page next')
+                self.exitsPageCount = self.exitsPageCount + 1
+
+            # print('next page link:' + str(nextPageLinks))
+            keywordId2nextPageLink = self.getKeyword2link(keywordId, nextPageLinks)
+            self.slpLinkDao.batchInsert(keywordId2nextPageLink)
+            self.keywordDao.updateKeywordState(keywordId, 2)
+            isLastPage = self.isLastPage(nextPage)
+            print('next page isLastPage:' + str(isLastPage))
+
     def close(self):
         self.keywordDao.close()
         self.myRedis.close()
@@ -149,6 +205,24 @@ class SearchBiying:
         self.driver.quit()
 
     def sentKey(self, keyword):
+        print('sent key')
+        key = 'currently unavailable %s /slp/ site:www.amazon.ca' % keyword
+        print(key)
+        self.driver.find_element_by_css_selector('#sb_form_q').send_keys(key)
+        self.driver.find_element_by_css_selector('#sb_form_go').click()
+        print('sent key finish')
+        time.sleep(3)
+        # self.driver.find_element_by_css_selector('#est_cn').click()
+        # time.sleep(5)
+        text = self.driver.page_source
+        print(text)
+        print('page_source finish')
+
+        return text
+
+
+    def sentKeyCom(self, keyword):
+        self.driver.get('https://cn.bing.com/?mkt=zh-CN')
         print('sent key')
         key = 'currently unavailable %s /slp/ site:www.amazon.com' % keyword
         print(key)
@@ -214,6 +288,9 @@ if __name__ == '__main__':
                 keywordId = id2keywordDic[0]
                 print(keywordId)
                 searchBiying.run(id2keywordDic)
+
+                searchBiying.runCom(id2keywordDic)
+
         except Exception as e:
             print(e)
         finally:
