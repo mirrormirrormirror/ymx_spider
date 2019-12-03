@@ -70,7 +70,6 @@ class SearchBiying:
         # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
         pattern = 'https://www.amazon.ca/slp/([a-zA-Z0-9-]+/?)+'
         pageLinks = re.findall(pattern, text)
-        print('page link:'+str(pageLinks))
         result = set()
         for i in pageLinks:
             result.add('https://www.amazon.ca/slp/' + i)
@@ -80,10 +79,10 @@ class SearchBiying:
         # pattern = 'https://www.amazon.ca/[a-zA-Z0-9-]+/dp/[a-zA-Z0-9]+'
         pattern = 'https://www.amazon.com/slp/([a-zA-Z0-9-]+/?)+'
         pageLinks = re.findall(pattern, text)
-        print('page link:'+str(pageLinks))
+
         result = set()
         for i in pageLinks:
-            result.add('https://www.amazon.ca/slp/' + i)
+            result.add('https://www.amazon.com/slp/' + i)
         return result
 
     def download(self, url):
@@ -114,6 +113,7 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKey(keyword)
         pageLinks = self.parsePageLink(text)
+        print('pageLinks:' + pageLinks)
         print("page link before")
         pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
         if len(pageLinks) == 0:
@@ -126,6 +126,7 @@ class SearchBiying:
         self.keywordDao.updateKeywordState(keywordId, 2)
         self.slpLinkDao.batchInsert(keyword2slpLink)
         isLastPage = self.isLastPage(text)
+
         print('one page isLastPage:' + str(isLastPage))
         nextPage = text
         while not isLastPage:
@@ -160,6 +161,7 @@ class SearchBiying:
         keywordId = keywordId2Keyword[0]
         text = self.sentKeyCom(keyword)
         pageLinks = self.parsePageLinkCom(text)
+        print('pageLinks:'+str(pageLinks))
         print("page link before")
         pageLinks = self.slpLinkDao.removalDuplicate(pageLinks)
         if len(pageLinks) == 0:
