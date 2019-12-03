@@ -185,7 +185,7 @@ class SearchBiying:
             if nextPage is None:
                 isLastPage = True
                 continue
-            nextPageLinks = self.parsePageLink(nextPage)
+            nextPageLinks = self.parsePageLinkCom(nextPage)
             nextPageLinks = self.slpLinkDao.removalDuplicate(nextPageLinks)
             print('nextPageLinks:' + str(nextPageLinks))
 
