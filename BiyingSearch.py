@@ -245,6 +245,7 @@ class SearchBiying:
         nextPageSoup = BeautifulSoup(nextPage)
         try:
             nextPageLink = nextPageSoup.select('#b_results > li.b_pag > nav > ul > li .sb_pagN')[0]['href']
+            print('nextPage:'+nextPage)
         except:
             return None
         self.driver.get('https://cn.bing.com/' + nextPageLink)
