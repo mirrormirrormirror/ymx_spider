@@ -290,7 +290,7 @@ if __name__ == '__main__':
                 keywordId = id2keywordDic[0]
                 print(keywordId)
                 searchBiying.run(id2keywordDic)
-
+                searchBiying.exitsPageCount = 0
                 searchBiying.runCom(id2keywordDic)
 
         except Exception as e:
