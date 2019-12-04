@@ -148,7 +148,7 @@ class Detail:
             brand = self.parseBrand(page)
             try:
                 commentList = self.getCommentList(asin)
-                print('commentList:'+str(commentList))
+                # print('commentList:'+str(commentList))
                 isHasCaComment = self.isHasCaComment(commentList)
                 print('isHasCaComment:'+str(isHasCaComment))
                 if isHasCaComment:
@@ -318,9 +318,9 @@ class Detail:
         lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0]
         lastReviewTimeComSoupOther = BeautifulSoup(str(lastReviewTimeComSoup))
         sectionSop = lastReviewTimeComSoupOther.select(".a-section")[0]
-        print('sectionSop:'+str(sectionSop))
-        lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(sectionSop))
-        print(str(lastReviewTimeStrGroup))
+        # print('sectionSop:'+str(sectionSop))
+        lastReviewTimeStrGroup = re.search(r'data-hook="review-date">(.*?)</span>', str(sectionSop))
+        # print(str(lastReviewTimeStrGroup))
         if lastReviewTimeStrGroup is None:
             print(str(sectionSop))
             return 'January 01, 2020'
