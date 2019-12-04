@@ -315,12 +315,14 @@ class Detail:
 
     def parseLastReviewTimeCom(self, page):
         soup = BeautifulSoup(page)
-        lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0][0]
+        lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0]
+        lastReviewTimeComSoupOther = BeautifulSoup(str(lastReviewTimeComSoup))
+        sectionSop = lastReviewTimeComSoupOther.select(".a-section")[0]
         print('lastReviewTimeComSoup:'+str(lastReviewTimeComSoup))
-        lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(lastReviewTimeComSoup))
+        lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(sectionSop))
         print(str(lastReviewTimeStrGroup))
         if lastReviewTimeStrGroup is None:
-            print(str(lastReviewTimeComSoup))
+            print(str(sectionSop))
             return 'January 01, 2020'
         else:
             lastReviewTimeStr = lastReviewTimeStrGroup.group()
