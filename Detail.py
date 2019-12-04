@@ -149,6 +149,7 @@ class Detail:
             try:
                 commentList = self.getCommentList(asin)
                 isHasCaComment = self.isHasCaComment(commentList)
+                print('isHasCaComment:'+str(isHasCaComment))
                 if isHasCaComment:
                     lastReviewTime = self.parseLastReviewTime(commentList)
                     isVariant = self.parseIsVariant(commentList)
@@ -306,14 +307,15 @@ class Detail:
         return self.chrome.driver.page_source
 
     def isHasCaComment(self, commentList):
-        if '&&&' not in commentList:
-            return False
-        else:
+        if '&&&' in commentList:
             return True
+        else:
+            return False
 
     def parseLastReviewTimeCom(self, page):
         soup = BeautifulSoup(page)
         lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0]
+        print('lastReviewTimeComSoup:'+str(lastReviewTimeComSoup))
         lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(lastReviewTimeComSoup))
         if lastReviewTimeStrGroup is None:
             print(str(lastReviewTimeComSoup))
