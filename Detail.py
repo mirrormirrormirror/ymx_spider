@@ -318,11 +318,13 @@ class Detail:
         lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0][0]
         print('lastReviewTimeComSoup:'+str(lastReviewTimeComSoup))
         lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(lastReviewTimeComSoup))
+        print(str(lastReviewTimeStrGroup))
         if lastReviewTimeStrGroup is None:
             print(str(lastReviewTimeComSoup))
             return 'January 01, 2020'
         else:
             lastReviewTimeStr = lastReviewTimeStrGroup.group()
+            print('lastReviewTimeStr:'+lastReviewTimeStr)
             lastReviewTimeResult = lastReviewTimeStr.split('>')[1].split('<')[0]
             return lastReviewTimeResult
 
