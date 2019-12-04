@@ -308,10 +308,10 @@ class Detail:
         return self.chrome.driver.page_source
 
     def isHasCaComment(self, commentList):
-        if '&&&' in commentList:
-            return True
-        else:
+        if 'No customer' in commentList:
             return False
+        else:
+            return True
 
     def parseLastReviewTimeCom(self, page):
         soup = BeautifulSoup(page)
