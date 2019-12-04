@@ -306,7 +306,7 @@ class Detail:
         return self.chrome.driver.page_source
 
     def isHasCaComment(self, commentList):
-        if 'No customer reviews' in commentList:
+        if '&&&' not in commentList:
             return False
         else:
             return True
