@@ -148,8 +148,13 @@ class Detail:
             brand = self.parseBrand(page)
             try:
                 commentList = self.getCommentList(asin)
-                lastReviewTime = self.parseLastReviewTime(commentList)
-                isVariant = self.parseIsVariant(commentList)
+                isHasCaComment = self.isHasCaComment(commentList)
+                if isHasCaComment:
+                    lastReviewTime = self.parseLastReviewTime(commentList)
+                    isVariant = self.parseIsVariant(commentList)
+                else:
+                    lastReviewTime = self.parseLastReviewTimeCom(page)
+                    isVariant = self.parseIsVariant(page)
             except Exception as e:
                 print(e)
                 lastReviewTime = 'January 01, 2030'
@@ -299,6 +304,24 @@ class Detail:
         print('click finish')
         time.sleep(5)
         return self.chrome.driver.page_source
+
+    def isHasCaComment(self, commentList):
+        if 'No customer reviews' in commentList:
+            return False
+        else:
+            return True
+
+    def parseLastReviewTimeCom(self, page):
+        soup = BeautifulSoup(page)
+        lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0]
+        lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(lastReviewTimeComSoup))
+        if lastReviewTimeStrGroup is None:
+            print(str(lastReviewTimeComSoup))
+            return 'January 01, 2020'
+        else:
+            lastReviewTimeStr = lastReviewTimeStrGroup.group()
+            lastReviewTimeResult = lastReviewTimeStr.split('>')[1].split('<')[0]
+            return lastReviewTimeResult
 
 if __name__ == '__main__':
     while True:
