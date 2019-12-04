@@ -148,6 +148,7 @@ class Detail:
             brand = self.parseBrand(page)
             try:
                 commentList = self.getCommentList(asin)
+                print('commentList:'+str(commentList))
                 isHasCaComment = self.isHasCaComment(commentList)
                 print('isHasCaComment:'+str(isHasCaComment))
                 if isHasCaComment:
