@@ -318,7 +318,7 @@ class Detail:
         lastReviewTimeComSoup = soup.select('#cm-cr-cmps-review-list div[data-hook="review"]')[0]
         lastReviewTimeComSoupOther = BeautifulSoup(str(lastReviewTimeComSoup))
         sectionSop = lastReviewTimeComSoupOther.select(".a-section")[0]
-        print('lastReviewTimeComSoup:'+str(lastReviewTimeComSoup))
+        print('sectionSop:'+str(sectionSop))
         lastReviewTimeStrGroup = re.search(r'secondary review-date\\">(.*?)</span>', str(sectionSop))
         print(str(lastReviewTimeStrGroup))
         if lastReviewTimeStrGroup is None:
