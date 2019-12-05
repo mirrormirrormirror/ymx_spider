@@ -23,7 +23,7 @@ class Chrome:
                 print('download')
                 self.driver.get(url)
                 print('download finish')
-                time.sleep(2)
+                time.sleep(1)
                 page = self.driver.page_source
                 print('page_source finish')
             except TimeoutException:

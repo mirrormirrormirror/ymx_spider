@@ -281,7 +281,7 @@ class Detail:
                              int(detailData['isVariant']))
             detailLinkDao.updateJobStateById(2, detailLinkId)
             detailLinkDao.close()
-            time.sleep(1)
+
 
     def inputVertify(self,text):
         soup = BeautifulSoup(text)
