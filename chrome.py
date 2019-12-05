@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
-
+import time
 
 class Chrome:
     def __init__(self):
@@ -23,6 +23,7 @@ class Chrome:
                 print('download')
                 self.driver.get(url)
                 print('download finish')
+                time.sleep(2)
                 page = self.driver.page_source
                 print('page_source finish')
             except TimeoutException:
