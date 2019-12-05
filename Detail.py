@@ -21,7 +21,7 @@ class Detail:
         # self.download = Download()
 
     def parseReviews(self, text):
-        reviewsPattern = 'a-size-base">\d+ ratings'
+        reviewsPattern = 'a-size-base">\d+ ratings?'
         reviewsStr = re.search(reviewsPattern, text)
         if reviewsStr is None:
             print('page abnormal skip')
