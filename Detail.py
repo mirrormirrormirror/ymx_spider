@@ -215,7 +215,7 @@ class Detail:
 
 
     def isUnavailable(self, text):
-        if 'Currently unavailable' in text:
+        if 'rrently unavailab' in text:
             return True
         else:
             return False
