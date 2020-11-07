@@ -31,6 +31,7 @@ class SearchBiying:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('window-size=1920x3000')
+        chrome_options.add_argument('window-size=1920x3000')
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('blink-settings=imagesEnabled=false')
