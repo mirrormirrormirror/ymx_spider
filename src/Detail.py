@@ -1,13 +1,11 @@
 import requests
 import re
-from DetailLinkDao import DetailLinkDao
-from DetailDao import DetailDao
+from src.DetailLinkDao import DetailLinkDao
+from src.DetailDao import DetailDao
 from bs4 import BeautifulSoup
 import time
-from DirDetailLinkDao import DirDetailLinkDao
-from chrome import Chrome
-from Download import Download
-from SlpLinkDao import SlpLinkDao
+from src.DirDetailLinkDao import DirDetailLinkDao
+from src.chrome import Chrome
 
 
 class Detail:

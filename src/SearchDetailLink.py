@@ -1,7 +1,7 @@
 import requests
-from DetailLinkDao import DetailLinkDao
-from SlpLinkDao import SlpLinkDao
-from KeywordDao import KeywordDao
+from src.DetailLinkDao import DetailLinkDao
+from src.SlpLinkDao import SlpLinkDao
+from src.KeywordDao import KeywordDao
 import time
 from bs4 import BeautifulSoup
 import re

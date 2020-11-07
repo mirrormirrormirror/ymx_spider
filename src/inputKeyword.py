@@ -1,4 +1,4 @@
-from KeywordDao import KeywordDao
+from src.KeywordDao import KeywordDao
 
 if __name__ == '__main__':
     keywordDao = KeywordDao()

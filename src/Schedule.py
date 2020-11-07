@@ -1,9 +1,9 @@
 
-from DetailLinkDao import DetailLinkDao
-from KeywordDao import KeywordDao
-from DirDetailLinkDao import DirDetailLinkDao
+from src.DetailLinkDao import DetailLinkDao
+from src.KeywordDao import KeywordDao
+from src.DirDetailLinkDao import DirDetailLinkDao
 import time
-from SlpLinkDao import SlpLinkDao
+from src.SlpLinkDao import SlpLinkDao
 
 if __name__ == '__main__':
     while True:

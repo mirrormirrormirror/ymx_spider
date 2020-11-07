@@ -4,9 +4,8 @@ sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
-import re
-from KeywordDao import KeywordDao
-from DetailLinkDao import DetailLinkDao
+from src.KeywordDao import KeywordDao
+from src.DetailLinkDao import DetailLinkDao
 
 
 class Search:

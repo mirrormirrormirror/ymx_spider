@@ -1,11 +1,10 @@
 import requests
 import re
-from KeywordDao import KeywordDao
-from DetailLinkDao import DetailLinkDao
+from src.KeywordDao import KeywordDao
+from src.DetailLinkDao import DetailLinkDao
 import pymysql
-from chrome import Chrome
 import redis
-from SlpLinkDao import SlpLinkDao
+from src.SlpLinkDao import SlpLinkDao
 import time
 
 

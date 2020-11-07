@@ -1,7 +1,7 @@
 import pymysql
 import redis
-from KeywordDao import KeywordDao
-from DirDetailLinkDao import DirDetailLinkDao
+from src.KeywordDao import KeywordDao
+from src.DirDetailLinkDao import DirDetailLinkDao
 
 
 class DetailLinkDao:

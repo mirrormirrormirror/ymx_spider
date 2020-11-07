@@ -1,7 +1,5 @@
 import pymysql
 import redis
-from KeywordDao import KeywordDao
-from DirDetailLinkDao import DirDetailLinkDao
 
 
 class SlpLinkDao:
