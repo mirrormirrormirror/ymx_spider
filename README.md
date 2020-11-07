@@ -5,4 +5,4 @@
 mysql，zookeeper
 
 ###启动方式
-./start.sh
+sh /bin/start.sh
